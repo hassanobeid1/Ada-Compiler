@@ -1,0 +1,11 @@
+// Invalid
+// ifthenelse fausse (float comme entree)
+
+{
+    float x= 2.5;
+
+    if(x){
+        println("non");
+    }
+
+}

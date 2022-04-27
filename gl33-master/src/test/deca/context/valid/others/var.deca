@@ -1,0 +1,7 @@
+
+{
+   int a;
+   String b = "hello";
+
+   println(a,b);
+}

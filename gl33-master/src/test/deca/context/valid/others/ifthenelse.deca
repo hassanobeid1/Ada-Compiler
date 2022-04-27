@@ -1,0 +1,42 @@
+// Valid test
+//ifthenelse
+
+{
+    int x = 1;
+    int y = 1;
+    boolean a = true;
+    boolean b = false;
+
+
+    if(x == y){
+        println("Test ifthenelse est bon");
+    }
+    else{
+        println("Test ifthenelse a echoue");
+    }
+
+
+    if(a){
+        println("Test ifthenelse est bon");
+    }
+
+    else{
+        println("Test ifthenelse a echoue");
+    }
+
+
+    if(a || b){
+        println("Test ifthenelse est bon");
+    }
+    else{
+        println("Test ifthenelse a echoue");
+    }
+
+
+    if(a){
+        if(b){
+            println("Test ifthenelse a echoue");
+        }
+    }
+
+}

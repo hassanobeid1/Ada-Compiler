@@ -1,0 +1,10 @@
+// Invalid test
+// Opérations sur les int et les boolean ensemble
+
+{
+    int n;
+    int m;
+    boolean a;
+
+    n = m + a;
+}

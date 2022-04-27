@@ -1,0 +1,44 @@
+// Invalid test
+// Comparaison d'un int à un boolean
+
+{
+    int n = 5;
+    float x=1.2;
+    string s;
+
+    while(n){
+        println("non");
+    }
+
+    while(x){
+        println("non");
+    }
+
+    while(s){
+        println("non");
+    }
+
+    while(n == true){
+        println("non");
+    }
+
+    while(x == true){
+        println("non");
+    }
+
+    while(s == true){
+        println("non");
+    }
+
+    while(n == false){
+        println("non");
+    }
+
+    while(x == false){
+        println("non");
+    }
+
+    while(s == false){
+        println("non");
+    }
+}

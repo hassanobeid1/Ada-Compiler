@@ -1,0 +1,20 @@
+// Description:
+//    tests conditionnelles
+//
+// Resultats:
+//   affiche les multiples inférieurs à 50 de n*m
+//
+// Historique:
+//    cree le 01/01/2021
+{
+    int n = 3452345;
+    int m = 981234;
+    int res = n * m;
+    int i = 1;
+    while (i < 50) {
+        if (res % i == 0) {
+              println("C'est un multiple de ", i);
+        }
+        i = i + 1;
+    }
+}

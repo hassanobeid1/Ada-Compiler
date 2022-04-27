@@ -1,0 +1,1 @@
+src/test/deca/syntax/invalid/others/returnFausse.deca:13:10: mismatched input ';' expecting {'-', '(', '!', 'true', 'false', 'null', 'this', 'new', 'readFloat', 'readInt', INT, FLOAT, STRING, IDENT}

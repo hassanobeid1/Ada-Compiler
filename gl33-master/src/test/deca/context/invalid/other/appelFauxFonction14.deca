@@ -1,0 +1,13 @@
+// Test de contexte invalide : appel faux de la fonction (float au lieu de string)
+
+class MyClass{
+
+    String puissance(String a){
+        return a;
+    }
+}
+
+{
+    MyClass m = new MyClass();
+    int x = m.puissance(1.2);
+}

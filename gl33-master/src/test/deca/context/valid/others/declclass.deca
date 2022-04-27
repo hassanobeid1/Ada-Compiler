@@ -1,0 +1,14 @@
+class Hello {
+
+    int a = 2;
+    protected boolean b;
+
+    void bonjour(boolean a) {
+        println("hello");
+    }
+}
+
+
+{
+    println("ok");
+}

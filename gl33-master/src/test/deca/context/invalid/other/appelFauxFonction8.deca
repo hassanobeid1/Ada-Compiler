@@ -1,0 +1,13 @@
+// Test de contexte invalide : appel faux de la fonction (appel sans paramètre d'entrée)
+
+class MyClass{
+
+    float puissance(float a){
+        return a*a;
+    }
+}
+
+{
+    MyClass m = new MyClass();
+    int x = m.puissance();
+}

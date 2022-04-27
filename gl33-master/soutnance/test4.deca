@@ -1,0 +1,16 @@
+class A {}
+
+class B {}
+
+{
+    A a ;
+
+    a = null;
+    if (a instanceof B) {
+        println("erreur");
+    } else {
+        println("ok");
+    }
+
+    println();
+}

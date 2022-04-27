@@ -1,0 +1,10 @@
+// Invalid test
+// Affectation d'un flottant à un boolean
+
+{
+   float x;
+   boolean b;
+
+   b = x;
+   b = 1.3;
+}

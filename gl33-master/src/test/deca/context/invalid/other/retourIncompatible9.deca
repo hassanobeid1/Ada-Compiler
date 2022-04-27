@@ -1,0 +1,18 @@
+// Test de contexte invalide : valeur de retour fausse (int alors que la fonction est void)
+
+class MyClass{
+
+    void isPos(int a){
+      if(a > 0){
+        return 1;
+        }
+      else{
+        return 0;
+        }
+    }
+}
+
+{
+    MyClass m = new MyClass();
+    int x = m.isPos(4);
+}

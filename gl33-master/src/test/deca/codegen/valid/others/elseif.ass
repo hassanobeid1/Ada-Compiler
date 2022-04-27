@@ -1,0 +1,36 @@
+; start main program
+; Main program
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	ADDSP #1
+; Beginning of main instructions:
+	LOAD 1(LB), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BLE debut_else_0
+	WSTR "wtf"
+	WNL
+	BRA fin_else_1
+debut_else_0:
+	LOAD 1(LB), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BLE debut_else_2
+	WSTR "wtf"
+	WNL
+	BRA fin_else_3
+debut_else_2:
+	WSTR "ok"
+	WNL
+fin_else_3:
+fin_else_1:
+	HALT
+; Stack overflow
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+; Fin Stack overflow
+; end main program

@@ -1,0 +1,9 @@
+// Invalid test
+// Affectation d'un void à un int
+
+{
+   int n;
+   void v;
+
+   n = v;
+}

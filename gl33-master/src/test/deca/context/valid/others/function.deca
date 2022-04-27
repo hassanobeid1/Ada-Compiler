@@ -1,0 +1,28 @@
+class Hello {
+
+    int a = 2;
+    protected int b;
+
+    int bonjour(boolean b) {
+        int a1 = this.getA();
+        int a2 = getA();
+    }
+
+    int getA() {
+        return this.a;
+    }
+}
+
+class X extends Hello{
+    Hello x = new Hello();
+
+    int getA() {
+        return x.a;
+    }
+}
+
+{
+    X x = new X();
+    println(x.getA());
+    println("ok");
+}

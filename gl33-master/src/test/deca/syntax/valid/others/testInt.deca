@@ -1,0 +1,14 @@
+/*
+Test sur les différentes valeurs de Int
+
+Attention : si le fichier est modifié, il faut le vérifier à nouveau et
+copier la sortie dans src/test/deca/valid/others/expected
+*/
+
+{
+    int a = 345;
+    int b = 0;
+    int c;
+    int d = 3;
+    int e, f, g;
+}

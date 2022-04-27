@@ -1,0 +1,11 @@
+/*
+Test sur l'identification des brackets
+
+Attention : si le fichier est modifié, il faut le vérifier à nouveau et
+copier la sortie dans src/test/deca/invalid/others/expected
+
+*/
+
+{
+  {  print("Hello");
+}

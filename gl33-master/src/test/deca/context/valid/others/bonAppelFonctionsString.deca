@@ -1,0 +1,12 @@
+//Test valid : appel des fonctions par les bons paramètres d'entrée (string) et par les bons valeurs de retour
+
+class MyClass{
+  String myFunc(String a){
+    return a;
+  }
+}
+
+{
+  MyClass m = new MyClass();
+  String b = m.myFunc("hello");
+}

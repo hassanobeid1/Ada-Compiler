@@ -1,0 +1,10 @@
+//Test invalid: bracket manquant pour la classe
+
+class MyClass
+  int a;
+}
+
+
+{
+
+}

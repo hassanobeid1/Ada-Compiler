@@ -1,0 +1,11 @@
+// Description:
+//    test declaration de variable
+//
+// Resultats:
+//    NA
+//
+// Historique:
+//    cree le 01/01/2021
+{
+    int a = 3 + 4;
+}

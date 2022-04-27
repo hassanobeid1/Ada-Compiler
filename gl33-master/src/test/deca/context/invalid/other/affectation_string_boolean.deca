@@ -1,0 +1,10 @@
+// Invalid test
+// Affectation d'un string à un boolean
+
+{
+   String s;
+   boolean b;
+
+   b = s;
+   b = "non";
+}

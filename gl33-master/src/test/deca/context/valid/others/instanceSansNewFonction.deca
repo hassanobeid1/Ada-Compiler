@@ -1,0 +1,13 @@
+// Test invalid : utiliser une instance sans le mot clé new
+
+class MyClass{
+   int myFunc(int a){
+    print("hello");
+    return 1;
+   }
+}
+
+{
+    MyClass m;
+    m.myFunc(1);
+}

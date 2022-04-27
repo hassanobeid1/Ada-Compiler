@@ -1,0 +1,10 @@
+// Test invalide : instance of une classe inexsistante
+
+class myClass{}
+{
+    MyClass m = new MyClass();
+    
+    if(m instanceof OtherClass){
+        print("Erreur");
+    }
+}

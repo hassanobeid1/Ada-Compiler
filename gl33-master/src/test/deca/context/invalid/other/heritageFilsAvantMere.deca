@@ -1,0 +1,5 @@
+// Test de contexte invalide : la classe fils est défini avant la classe mère
+
+class B extends A{}
+
+class A{}

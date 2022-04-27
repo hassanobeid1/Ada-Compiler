@@ -1,0 +1,72 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:50) - verify program: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:34) - verify listClass: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:38) - verify listClass: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:52) - Passe 1 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:54) - Passe 2 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:56) - Passe 3 Classes OK
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:28) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:34) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:58) - verify program: end
+`> [3, 0] Program
+   +> [1, 0] ListDeclClass [List with 1 elements]
+   |  []> [1, 0] DeclClass
+   |      +> [1, 6] Identifier (Hello)
+   |      |  definition: type defined at [1, 6], type=Hello
+   |      +> [1, 12] Identifier (Object)
+   |      |  definition: type (builtin), type=Object
+   |      +> ListDeclField [List with 0 elements]
+   |      `> ListDeclMethod [List with 0 elements]
+   `> [3, 0] Main
+      +> ListDeclVar [List with 2 elements]
+      |  []> [4, 10] DeclVar
+      |  ||  +> [4, 4] Identifier (Hello)
+      |  ||  |  definition: type defined at [1, 6], type=Hello
+      |  ||  +> [4, 10] Identifier (a)
+      |  ||  |  definition: variable defined at [4, 10], type=Hello
+      |  ||  `> [4, 10] Initialization
+      |  ||     `> [4, 14] New
+      |  ||        type: Hello
+      |  ||        `> [4, 18] Identifier (Hello)
+      |  ||           definition: type defined at [1, 6], type=Hello
+      |  []> [5, 10] DeclVar
+      |      +> [5, 4] Identifier (Hello)
+      |      |  definition: type defined at [1, 6], type=Hello
+      |      +> [5, 10] Identifier (b)
+      |      |  definition: variable defined at [5, 10], type=Hello
+      |      `> [5, 10] Initialization
+      |         `> [5, 14] New
+      |            type: Hello
+      |            `> [5, 18] Identifier (Hello)
+      |               definition: type defined at [1, 6], type=Hello
+      `> [6, 4] ListInst [List with 2 elements]
+         []> [6, 8] IfThenElse
+         ||  +> [6, 8] MethodCall
+         ||  |  type: boolean
+         ||  |  +> [6, 8] Identifier (a)
+         ||  |  |  definition: variable defined at [4, 10], type=Hello
+         ||  |  `> [6, 10] FunctionCall
+         ||  |     type: boolean
+         ||  |     +> [6, 10] Identifier (equals)
+         ||  |     |  definition: method (builtin), type=boolean
+         ||  |     `> [6, 17] ListExpr [List with 1 elements]
+         ||  |        []> [6, 17] Identifier (b)
+         ||  |            definition: variable defined at [5, 10], type=Hello
+         ||  +> [7, 8] ListInst [List with 1 elements]
+         ||  |  []> [7, 16] Println
+         ||  |      `> [7, 16] ListExpr [List with 1 elements]
+         ||  |         []> [7, 16] StringLiteral (no)
+         ||  |             type: String
+         ||  `> ListInst [List with 0 elements]
+         []> [9, 8] IfThenElse
+             +> [9, 13] NotEquals
+             |  type: boolean
+             |  +> [9, 8] Identifier (a)
+             |  |  definition: variable defined at [4, 10], type=Hello
+             |  `> [9, 13] Identifier (b)
+             |     definition: variable defined at [5, 10], type=Hello
+             +> [10, 8] ListInst [List with 1 elements]
+             |  []> [10, 16] Println
+             |      `> [10, 16] ListExpr [List with 1 elements]
+             |         []> [10, 16] StringLiteral (yes)
+             |             type: String
+             `> ListInst [List with 0 elements]

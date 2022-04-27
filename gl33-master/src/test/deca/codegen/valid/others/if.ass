@@ -1,0 +1,39 @@
+; start main program
+	LOAD #0, R0
+	STORE R0, 1(GB)
+; Main program
+	TSTO #0	; TSTO
+	BOV pile_pleine
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Push Registre
+; Beginning of instructions:
+	BRA debut_else_2
+	WSTR "erreur"
+	WNL
+	BRA fin_else_3
+debut_else_2:
+	WSTR "ok"
+	WNL
+fin_else_3:
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+; end main program

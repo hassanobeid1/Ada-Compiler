@@ -1,0 +1,65 @@
+// Description:
+//    tests sur les comparaisons
+//
+// Resultats:
+//    affiche le résultat de différentes comparaisons
+//
+// Historique:
+//    cree le 01/01/2021
+{
+    int a = 10;
+    float b = 10.5;
+    boolean c = ! ! true && false || true;
+    boolean d = true || false || true;
+    boolean e = true || false && true || false;
+    boolean f = false || (3 <= 4.5) && true && !!!!!!false;
+
+    if (a < b) {
+        print(1);
+    }
+    else {
+        print(0);
+    }
+
+    if (c) {
+            print(1);
+        }
+        else {
+            print(0);
+        }
+
+    if (!(a == b)) {
+            print(1);
+        }
+        else {
+            print(0);
+        }
+    if (d) {
+            print(1);
+        }
+        else {
+            print(0);
+    }
+
+    if (e) {
+            print(1);
+        }
+        else {
+            print(0);
+    }
+
+    if (!f) {
+            print(1);
+        }
+        else {
+            print(0);
+    }
+
+    if (1.0000 == 1) {
+            print(1);
+        }
+        else {
+            print(0);
+    }
+
+}

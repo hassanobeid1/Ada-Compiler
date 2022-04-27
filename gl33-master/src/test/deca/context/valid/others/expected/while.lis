@@ -1,0 +1,162 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:50) - verify program: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:34) - verify listClass: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:38) - verify listClass: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:52) - Passe 1 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:54) - Passe 2 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:56) - Passe 3 Classes OK
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:28) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:34) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:58) - verify program: end
+`> [4, 0] Program
+   +> [4, 0] ListDeclClass [List with 0 elements]
+   `> [4, 0] Main
+      +> ListDeclVar [List with 4 elements]
+      |  []> [5, 12] DeclVar
+      |  ||  +> [5, 4] Identifier (boolean)
+      |  ||  |  definition: type (builtin), type=boolean
+      |  ||  +> [5, 12] Identifier (a)
+      |  ||  |  definition: variable defined at [5, 12], type=boolean
+      |  ||  `> [5, 12] Initialization
+      |  ||     `> [5, 16] BooleanLiteral (true)
+      |  ||        type: boolean
+      |  []> [6, 12] DeclVar
+      |  ||  +> [6, 4] Identifier (boolean)
+      |  ||  |  definition: type (builtin), type=boolean
+      |  ||  +> [6, 12] Identifier (b)
+      |  ||  |  definition: variable defined at [6, 12], type=boolean
+      |  ||  `> [6, 12] Initialization
+      |  ||     `> [6, 16] BooleanLiteral (false)
+      |  ||        type: boolean
+      |  []> [7, 8] DeclVar
+      |  ||  +> [7, 4] Identifier (int)
+      |  ||  |  definition: type (builtin), type=int
+      |  ||  +> [7, 8] Identifier (x)
+      |  ||  |  definition: variable defined at [7, 8], type=int
+      |  ||  `> [7, 8] Initialization
+      |  ||     `> [7, 12] Int (1)
+      |  ||        type: int
+      |  []> [8, 8] DeclVar
+      |      +> [8, 4] Identifier (int)
+      |      |  definition: type (builtin), type=int
+      |      +> [8, 8] Identifier (y)
+      |      |  definition: variable defined at [8, 8], type=int
+      |      `> [8, 8] Initialization
+      |         `> [8, 12] Int (2)
+      |            type: int
+      `> [10, 4] ListInst [List with 8 elements]
+         []> [10, 10] While
+         ||  +> [10, 11] Not
+         ||  |  type: boolean
+         ||  |  `> [10, 11] Identifier (a)
+         ||  |     definition: variable defined at [5, 12], type=boolean
+         ||  `> [11, 8] ListInst [List with 1 elements]
+         ||     []> [11, 16] Println
+         ||         `> [11, 16] ListExpr [List with 1 elements]
+         ||            []> [11, 16] StringLiteral (Inaccessible)
+         ||                type: String
+         []> [14, 10] While
+         ||  +> [14, 10] Identifier (b)
+         ||  |  definition: variable defined at [6, 12], type=boolean
+         ||  `> [15, 8] ListInst [List with 1 elements]
+         ||     []> [15, 16] Println
+         ||         `> [15, 16] ListExpr [List with 1 elements]
+         ||            []> [15, 16] StringLiteral (Inaccessible)
+         ||                type: String
+         []> [18, 10] While
+         ||  +> [18, 10] Identifier (a)
+         ||  |  definition: variable defined at [5, 12], type=boolean
+         ||  `> [19, 8] ListInst [List with 2 elements]
+         ||     []> [19, 16] Println
+         ||     ||  `> [19, 16] ListExpr [List with 1 elements]
+         ||     ||     []> [19, 16] StringLiteral (Bon)
+         ||     ||         type: String
+         ||     []> [20, 8] Assign
+         ||         type: boolean
+         ||         +> [20, 8] Identifier (a)
+         ||         |  definition: variable defined at [5, 12], type=boolean
+         ||         `> [20, 10] BooleanLiteral (false)
+         ||            type: boolean
+         []> [23, 10] While
+         ||  +> [23, 11] Not
+         ||  |  type: boolean
+         ||  |  `> [23, 11] Identifier (a)
+         ||  |     definition: variable defined at [5, 12], type=boolean
+         ||  `> [24, 8] ListInst [List with 2 elements]
+         ||     []> [24, 16] Println
+         ||     ||  `> [24, 16] ListExpr [List with 1 elements]
+         ||     ||     []> [24, 16] StringLiteral (Bon)
+         ||     ||         type: String
+         ||     []> [25, 8] Assign
+         ||         type: boolean
+         ||         +> [25, 8] Identifier (a)
+         ||         |  definition: variable defined at [5, 12], type=boolean
+         ||         `> [25, 10] BooleanLiteral (true)
+         ||            type: boolean
+         []> [28, 10] While
+         ||  +> [28, 10] Or
+         ||  |  type: boolean
+         ||  |  +> [28, 10] Identifier (a)
+         ||  |  |  definition: variable defined at [5, 12], type=boolean
+         ||  |  `> [28, 15] Identifier (b)
+         ||  |     definition: variable defined at [6, 12], type=boolean
+         ||  `> [29, 8] ListInst [List with 2 elements]
+         ||     []> [29, 16] Println
+         ||     ||  `> [29, 16] ListExpr [List with 1 elements]
+         ||     ||     []> [29, 16] StringLiteral (Bon)
+         ||     ||         type: String
+         ||     []> [30, 8] Assign
+         ||         type: boolean
+         ||         +> [30, 8] Identifier (a)
+         ||         |  definition: variable defined at [5, 12], type=boolean
+         ||         `> [30, 10] BooleanLiteral (false)
+         ||            type: boolean
+         []> [33, 10] While
+         ||  +> [33, 10] And
+         ||  |  type: boolean
+         ||  |  +> [33, 10] Identifier (a)
+         ||  |  |  definition: variable defined at [5, 12], type=boolean
+         ||  |  `> [33, 15] Identifier (b)
+         ||  |     definition: variable defined at [6, 12], type=boolean
+         ||  `> [34, 8] ListInst [List with 1 elements]
+         ||     []> [34, 16] Println
+         ||         `> [34, 16] ListExpr [List with 1 elements]
+         ||            []> [34, 16] StringLiteral (Inaccessible)
+         ||                type: String
+         []> [37, 10] While
+         ||  +> [37, 10] Or
+         ||  |  type: boolean
+         ||  |  +> [37, 10] Greater
+         ||  |  |  type: boolean
+         ||  |  |  +> [37, 10] Identifier (x)
+         ||  |  |  |  definition: variable defined at [7, 8], type=int
+         ||  |  |  `> [37, 14] Identifier (y)
+         ||  |  |     definition: variable defined at [8, 8], type=int
+         ||  |  `> [37, 19] Equals
+         ||  |     type: boolean
+         ||  |     +> [37, 19] Identifier (x)
+         ||  |     |  definition: variable defined at [7, 8], type=int
+         ||  |     `> [37, 23] Identifier (y)
+         ||  |        definition: variable defined at [8, 8], type=int
+         ||  `> [38, 8] ListInst [List with 1 elements]
+         ||     []> [38, 16] Println
+         ||         `> [38, 16] ListExpr [List with 1 elements]
+         ||            []> [38, 16] StringLiteral (Inaccessible)
+         ||                type: String
+         []> [41, 10] While
+             +> [41, 10] Lower
+             |  type: boolean
+             |  +> [41, 10] Identifier (x)
+             |  |  definition: variable defined at [7, 8], type=int
+             |  `> [41, 14] Identifier (y)
+             |     definition: variable defined at [8, 8], type=int
+             `> [42, 8] ListInst [List with 2 elements]
+                []> [42, 16] Println
+                ||  `> [42, 16] ListExpr [List with 1 elements]
+                ||     []> [42, 16] StringLiteral (Bon)
+                ||         type: String
+                []> [43, 8] Assign
+                    type: int
+                    +> [43, 8] Identifier (x)
+                    |  definition: variable defined at [7, 8], type=int
+                    `> [43, 10] Int (3)
+                       type: int

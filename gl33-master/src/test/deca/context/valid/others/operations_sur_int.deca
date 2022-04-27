@@ -1,0 +1,23 @@
+// Valid test
+// Opérations sur les int
+
+{
+    int x = 1;
+    int y = 1;
+    int z = 1;
+
+    x = y + z;
+    x = y - z;
+    x = y * z;
+    x = y / z;
+
+    y = x + z;
+    y = x - z;
+    y = x * z;
+    y = x / z;
+
+    z = x + y;
+    z = x - y;
+    z = x * y;
+    z = x / y;
+}

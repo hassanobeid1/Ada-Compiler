@@ -1,0 +1,23 @@
+// Valid test
+// Opérations sur les flottants
+
+{
+    float x = 1.1;
+    float y = 2.2;
+    float z = 3.3;
+
+    x = y + z;
+    x = y - z;
+    x = y * z;
+    x = y / z;
+
+    y = x + z;
+    y = x - z;
+    y = x * z;
+    y = x / z;
+
+    z = x + y;
+    z = x - y;
+    z = x * y;
+    z = x / y;
+}

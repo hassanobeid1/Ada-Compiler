@@ -1,0 +1,163 @@
+; start main program
+	TSTO #6	; TSTO
+	BOV pile_pleine
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD a2_getA, R0
+	STORE R0, 5(GB)
+	LOAD a3_getB, R0
+	STORE R0, 6(GB)
+	ADDSP #6
+; Main program
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	ADDSP #1
+	NEW #2, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a4_A.init
+	POP R2
+	STORE R2, 7(LB)
+; Beginning of instructions:
+	ADDSP #1
+	LOAD 7(LB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	BEQ dereferencement.null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WNL
+	ADDSP #1
+	LOAD 7(LB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	BEQ dereferencement.null
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #1
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WNL
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : tentative de division par 0"
+	WNL
+	ERROR
+modulo0:
+	WSTR "Erreur : tentative d'obtenir le reste d'une division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a4_A.init:
+	TSTO #5	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+	PUSH R3	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD -2(LB), R2
+	LOAD #0, R0
+	STORE R0, 1(R2)
+	PUSH R2
+	BSR a0_Object.init
+	SUBSP #1
+	LOAD #1, R3
+	STORE R3, 1(R2)
+	POP R3
+	POP R2
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a6_Eq
+	LOAD #0, R0
+	RTS
+a6_Eq:
+	LOAD #1, R0
+	RTS
+; Code de la methode getA
+a2_getA:
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	LOAD -2(LB), R1
+	BEQ dereferencement.null
+	LOAD 1(R1), R2
+	LOAD R2, R0
+	BRA a7_return
+	WSTR "Erreur : sortie de la methode sans return"
+	WNL
+	ERROR
+a7_return:
+	POP R2
+	RTS
+; Code de la methode getB
+a3_getB:
+	TSTO #0	; TSTO
+	BOV pile_pleine
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	WSTR "Erreur : sortie de la methode sans return"
+	WNL
+	ERROR
+a8_return:
+	RTS
+; end main program

@@ -1,0 +1,259 @@
+; start main program
+	TSTO #10	; TSTO
+	BOV pile_pleine
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD a2_getA, R0
+	STORE R0, 5(GB)
+	LEA 3(GB), R0
+	STORE R0, 6(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 7(GB)
+	LOAD a2_getA, R0
+	STORE R0, 8(GB)
+	LEA 1(GB), R0
+	STORE R0, 9(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 10(GB)
+	ADDSP #10
+; Main program
+	TSTO #8	; TSTO
+	BOV pile_pleine
+	ADDSP #5
+	NEW #1, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a3_A.init
+	POP R2
+	STORE R2, 11(LB)
+	NEW #1, R2
+	LEA 6(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a4_B.init
+	POP R2
+	STORE R2, 12(LB)
+	NEW #1, R2
+	LEA 9(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a5_C.init
+	POP R2
+	STORE R2, 13(LB)
+; cast B to A
+	LOAD 12(LB), R2
+	CMP #null, R2
+	BEQ dereferencement.null
+; B instance of A?
+a8_debut_boucle:
+	LOAD 0(R2), R2
+	BEQ a9_fin_boucle
+	LEA 3(GB), R0
+	CMP R0, R2
+	BEQ a7_si_true
+	BRA a8_debut_boucle
+a9_fin_boucle:
+	WSTR "Erreur : Tentative de cast vers un type incompatible"
+	WNL
+	ERROR
+a7_si_true:
+	LOAD 12(LB), R2
+	STORE R2, 14(LB)
+; Beginning of instructions:
+	ADDSP #1
+	LOAD 14(LB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	BEQ dereferencement.null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WNL
+; cast A to B
+	LOAD 14(LB), R2
+	CMP #null, R2
+	BEQ dereferencement.null
+; A instance of B?
+a11_debut_boucle:
+	LOAD 0(R2), R2
+	BEQ a12_fin_boucle
+	LEA 6(GB), R0
+	CMP R0, R2
+	BEQ a10_si_true
+	BRA a11_debut_boucle
+a12_fin_boucle:
+	WSTR "Erreur : Tentative de cast vers un type incompatible"
+	WNL
+	ERROR
+a10_si_true:
+	LOAD 14(LB), R2
+	STORE R2, 15(LB)
+	ADDSP #1
+	LOAD 14(LB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	BEQ dereferencement.null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WNL
+; cast C to A
+	LOAD 13(LB), R2
+	CMP #null, R2
+	BEQ dereferencement.null
+; C instance of A?
+a14_debut_boucle:
+	LOAD 0(R2), R2
+	BEQ a15_fin_boucle
+	LEA 3(GB), R0
+	CMP R0, R2
+	BEQ a13_si_true
+	BRA a14_debut_boucle
+a15_fin_boucle:
+	WSTR "Erreur : Tentative de cast vers un type incompatible"
+	WNL
+	ERROR
+a13_si_true:
+	LOAD 13(LB), R2
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : tentative de division par 0"
+	WNL
+	ERROR
+modulo0:
+	WSTR "Erreur : tentative d'obtenir le reste d'une division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a3_A.init:
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD -2(LB), R2
+	LOAD #0, R0
+	PUSH R2
+	BSR a0_Object.init
+	SUBSP #1
+	POP R2
+	RTS
+a4_B.init:
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD -2(LB), R2
+	LOAD #0, R0
+	PUSH R2
+	BSR a3_A.init
+	SUBSP #1
+	POP R2
+	RTS
+a5_C.init:
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD -2(LB), R2
+	LOAD #0, R0
+	PUSH R2
+	BSR a0_Object.init
+	SUBSP #1
+	POP R2
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a16_Eq
+	LOAD #0, R0
+	RTS
+a16_Eq:
+	LOAD #1, R0
+	RTS
+; Code de la methode getA
+a2_getA:
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	LOAD #2, R2
+	LOAD R2, R0
+	BRA a17_return
+	WSTR "Erreur : sortie de la methode sans return"
+	WNL
+	ERROR
+a17_return:
+	POP R2
+	RTS
+; end main program

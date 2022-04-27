@@ -1,0 +1,78 @@
+; start main program
+	TSTO #2	; TSTO
+	BOV pile_pleine
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	ADDSP #2
+; Main program
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	LOAD #3452345, R2
+	STORE R2, 3(LB)
+	LOAD #981234, R3
+	STORE R3, 4(LB)
+	LOAD 3(LB), R4
+	LOAD 4(LB), R5
+	MUL R5, R4
+	STORE R4, 5(LB)
+	LOAD #1, R5
+	STORE R5, 6(LB)
+	ADDSP #4
+; Beginning of instructions:
+	BRA a3_E_Cond
+a4_E_Debut:
+	LOAD 5(LB), R2
+	LOAD 6(LB), R3
+	REM R3, R2
+	BOV modulo0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE a5_debut_else
+	WSTR "C'est un multiple de "
+	LOAD 6(LB), R2
+	LOAD R2, R1
+	WINT
+	WNL
+	BRA a6_fin_else
+a5_debut_else:
+a6_fin_else:
+	LOAD 6(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 6(LB)
+a3_E_Cond:
+	LOAD 6(LB), R2
+	LOAD #50, R3
+	CMP R3, R2
+	BLT a4_E_Debut
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : tentative de division par 0"
+	WNL
+	ERROR
+modulo0:
+	WSTR "Erreur : tentative d'obtenir le reste d'une division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a7_Eq
+	LOAD #0, R0
+	RTS
+a7_Eq:
+	LOAD #1, R0
+	RTS
+; end main program

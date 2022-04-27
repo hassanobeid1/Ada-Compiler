@@ -1,0 +1,9 @@
+// Invalid test
+// Opération sur les int et les flottant ensemble
+
+{
+    int a, b;
+    float x;
+
+    a = b * x;
+}

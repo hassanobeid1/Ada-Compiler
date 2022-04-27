@@ -1,0 +1,29 @@
+`> [8, 0] Program
+   +> [8, 0] ListDeclClass [List with 0 elements]
+   `> [8, 0] Main
+      +> ListDeclVar [List with 5 elements]
+      |  []> [9, 11] DeclVar
+      |  ||  +> [9, 4] Identifier (string)
+      |  ||  +> [9, 11] Identifier (a)
+      |  ||  `> [9, 11] Initialization
+      |  ||     `> [9, 15] StringLiteral (hello)
+      |  []> [10, 11] DeclVar
+      |  ||  +> [10, 4] Identifier (string)
+      |  ||  +> [10, 11] Identifier (b)
+      |  ||  `> [10, 11] Initialization
+      |  ||     `> [10, 15] StringLiteral (world")
+      |  []> [11, 11] DeclVar
+      |  ||  +> [11, 4] Identifier (string)
+      |  ||  +> [11, 11] Identifier (c)
+      |  ||  `> [11, 11] Initialization
+      |  ||     `> [11, 15] StringLiteral (home\)
+      |  []> [12, 11] DeclVar
+      |  ||  +> [12, 4] Identifier (string)
+      |  ||  +> [12, 11] Identifier (d)
+      |  ||  `> [12, 11] Initialization
+      |  ||     `> [12, 15] StringLiteral ()
+      |  []> [13, 11] DeclVar
+      |      +> [13, 4] Identifier (string)
+      |      +> [13, 11] Identifier (e)
+      |      `> [13, 11] NoInitialization
+      `> [14, 0] ListInst [List with 0 elements]

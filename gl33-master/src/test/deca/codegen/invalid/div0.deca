@@ -1,0 +1,8 @@
+/*
+Test sur la division par 0.
+*/
+
+{
+    int a = 4 / 0;
+    print(a);
+}

@@ -1,0 +1,94 @@
+; start main program
+	TSTO #2	; TSTO
+	BOV pile_pleine
+a2_Object:
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	ADDSP #2
+; Main program
+	TSTO #2	; TSTO
+	BOV pile_pleine
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD #42, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	ADDSP #2
+; Beginning of instructions:
+	BRA a4_E_Cond
+a5_E_Debut:
+	LOAD 1(LB), R2
+	LOAD #2, R3
+	REM R3, R2
+	LOAD #0, R3
+	CMP R3, R2
+	BNE a6_debut_else
+	LOAD 1(LB), R2
+	LOAD #2, R3
+	QUO R3, R2
+	BOV div0
+	STORE R2, 1(LB)
+	BRA a7_fin_else
+a6_debut_else:
+	LOAD #2, R2
+	LOAD 1(LB), R3
+	MUL R3, R2
+	LOAD 1(LB), R3
+	ADD R3, R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+a7_fin_else:
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+a4_E_Cond:
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE a5_E_Debut
+	LOAD 2(LB), R2
+	LOAD R2, R1
+	WINT
+	WNL
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a8_Eq
+	LOAD #0, R0
+	RTS
+a8_Eq:
+	LOAD #1, R0
+	RTS
+; end main program

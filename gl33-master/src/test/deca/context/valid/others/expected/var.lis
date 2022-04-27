@@ -1,0 +1,34 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:50) - verify program: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:34) - verify listClass: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:38) - verify listClass: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:52) - Passe 1 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:54) - Passe 2 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:56) - Passe 3 Classes OK
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:28) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:34) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:58) - verify program: end
+`> [2, 0] Program
+   +> [2, 0] ListDeclClass [List with 0 elements]
+   `> [2, 0] Main
+      +> ListDeclVar [List with 2 elements]
+      |  []> [3, 7] DeclVar
+      |  ||  +> [3, 3] Identifier (int)
+      |  ||  |  definition: type (builtin), type=int
+      |  ||  +> [3, 7] Identifier (a)
+      |  ||  |  definition: variable defined at [3, 7], type=int
+      |  ||  `> [3, 7] NoInitialization
+      |  []> [4, 10] DeclVar
+      |      +> [4, 3] Identifier (String)
+      |      |  definition: type (builtin), type=String
+      |      +> [4, 10] Identifier (b)
+      |      |  definition: variable defined at [4, 10], type=String
+      |      `> [4, 10] Initialization
+      |         `> [4, 14] StringLiteral (hello)
+      |            type: String
+      `> [6, 3] ListInst [List with 1 elements]
+         []> [6, 11] Println
+             `> [6, 11] ListExpr [List with 2 elements]
+                []> [6, 11] Identifier (a)
+                ||  definition: variable defined at [3, 7], type=int
+                []> [6, 13] Identifier (b)
+                    definition: variable defined at [4, 10], type=String

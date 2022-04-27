@@ -1,0 +1,25 @@
+/*
+Test sur les conditions : le fichier est valide pour deca sans objet. Suppose que le == et println fonctionne
+Attention : si le fichier est modifié, il faut le vérifier à nouveau et
+copier la sortie dans src/test/deca/valid/others/expected
+Author : Tanguy Poinson
+Date : 17/01/2021
+*/
+
+{
+    if( 1 == 1) {
+        println("Hello");
+        println("On passe dans le if d'une condiiton true");
+    } else {
+        println("Erreur : on passe dans le else d'une condiiton true");
+    }
+
+
+    if(1 == 0) {
+        println("Erreur : on passe dans le if d'une condiiton false");
+    }
+    else {
+        println("On passe dans le else d'une condiiton false");
+    }
+
+}

@@ -1,0 +1,9 @@
+`> [9, 0] Program
+   +> [9, 0] ListDeclClass [List with 0 elements]
+   `> [9, 0] Main
+      +> ListDeclVar [List with 0 elements]
+      `> [10, 4] ListInst [List with 2 elements]
+         []> [10, 10] Print
+         ||  `> [10, 10] ListExpr [List with 1 elements]
+         ||     []> [10, 10] StringLiteral (Hello)
+         []> [10, 19] NoOperation

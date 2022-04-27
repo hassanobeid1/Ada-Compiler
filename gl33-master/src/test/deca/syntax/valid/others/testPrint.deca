@@ -1,0 +1,21 @@
+/*
+Test sur les print et les Read
+
+Attention : si le fichier est modifié, il faut le vérifier à nouveau et
+copier la sortie dans src/test/deca/valid/others/expected
+
+*/
+
+{
+    int a;
+    float b;
+
+    print("Début de la phrase, suite en hexa ");
+    printx("ahah ");
+    println(" fin de la première ligne ");
+    printlnx("haha ");
+
+    a = readInt();
+    b = readFloat();
+    println(a, b);
+}

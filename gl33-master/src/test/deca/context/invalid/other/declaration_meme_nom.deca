@@ -1,0 +1,10 @@
+// Invalid
+// Déclaration des variables de même nom
+
+
+{
+   int a = 2;
+   float a;
+   string a;
+   void a;
+}

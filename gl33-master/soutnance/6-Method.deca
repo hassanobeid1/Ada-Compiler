@@ -1,0 +1,14 @@
+class A {
+    void test(int arg1, int arg2, int arg3, int arg4) {
+        println(arg1);
+        println(arg2);
+        println(arg3);
+        println(arg4);
+    }
+}
+
+ {
+     A a = new A();
+     int x = 0;
+     a.test(x = x + 1,x = x + 1,x = x + 1 ,x = x + 1);
+ }

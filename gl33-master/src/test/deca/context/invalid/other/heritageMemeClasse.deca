@@ -1,0 +1,8 @@
+// Test de contexte invalide : héritage de la même classe
+
+class A{}
+
+class B extends B{}
+{
+    B b = new B();
+}

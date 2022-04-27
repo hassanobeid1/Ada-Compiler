@@ -1,0 +1,9 @@
+// Invalid test
+// Affectation d'un void à un string
+
+{
+   String s;
+   void v;
+
+   s = v;
+}

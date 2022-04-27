@@ -1,0 +1,63 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:42) - verify program: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:34) - verify listClass: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:38) - verify listClass: end
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:30) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:36) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:47) - verify program: end
+`> [10, 0] Program
+   +> [3, 0] ListDeclClass [List with 1 elements]
+   |  []> [3, 0] DeclClass
+   |      +> [3, 6] Identifier (MyClass)
+   |      |  definition: type defined at [3, 6], type=MyClass
+   |      +> [3, 13] Identifier (Object)
+   |      |  definition: type (builtin), type=Object
+   |      +> ListDeclField [List with 0 elements]
+   |      `> ListDeclMethod [List with 1 elements]
+   |         []> [5, 4] DeclMethod
+   |             +> [5, 4] Identifier (int)
+   |             |  definition: type (builtin), type=int
+   |             +> [5, 8] Identifier (puissance)
+   |             +> [5, 18] ListParameter [List with 1 elements]
+   |             |  []> [5, 18] Parameter
+   |             |      +> [5, 18] Identifier (int)
+   |             |      |  definition: type (builtin), type=int
+   |             |      `> [5, 22] Identifier (a)
+   |             |         definition: parameter defined at [5, 22], type=int
+   |             `> [5, 24] BlockBody
+   |                +> ListDeclVar [List with 0 elements]
+   |                `> [6, 8] ListInst [List with 1 elements]
+   |                   []> [6, 15] Return
+   |                       `> [6, 15] Multiply
+   |                          type: int
+   |                          +> [6, 15] Identifier (a)
+   |                          |  definition: parameter defined at [5, 22], type=int
+   |                          `> [6, 17] Identifier (a)
+   |                             definition: parameter defined at [5, 22], type=int
+   `> [10, 0] Main
+      +> ListDeclVar [List with 2 elements]
+      |  []> [11, 12] DeclVar
+      |  ||  +> [11, 4] Identifier (MyClass)
+      |  ||  |  definition: type defined at [3, 6], type=MyClass
+      |  ||  +> [11, 12] Identifier (m)
+      |  ||  |  definition: variable defined at [11, 12], type=MyClass
+      |  ||  `> [11, 12] Initialization
+      |  ||     `> [11, 16] New
+      |  ||        type: MyClass
+      |  ||        `> [11, 20] Identifier (MyClass)
+      |  []> [12, 8] DeclVar
+      |      +> [12, 4] Identifier (int)
+      |      |  definition: type (builtin), type=int
+      |      +> [12, 8] Identifier (x)
+      |      |  definition: variable defined at [12, 8], type=int
+      |      `> [12, 8] Initialization
+      |         `> [12, 12] MethodCall
+      |            type: int
+      |            +> [12, 12] Identifier (m)
+      |            |  definition: variable defined at [11, 12], type=MyClass
+      |            `> [12, 14] FunctionCall
+      |               type: int
+      |               +> [12, 14] Identifier (puissance)
+      |               `> [12, 24] ListExpr [List with 1 elements]
+      |                  []> [12, 24] Float (3.75E-4)
+      |                      type: float
+      `> [13, 0] ListInst [List with 0 elements]

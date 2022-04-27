@@ -1,0 +1,12 @@
+{
+    int a = 2;
+    float b = 3;
+    
+    println(a+b);
+
+    if (b > a) {
+        println("ok");
+    } else {
+        println("erreur");
+    }
+}

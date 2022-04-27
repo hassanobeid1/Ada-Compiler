@@ -1,0 +1,22 @@
+/*
+Test sur les différentes valeurs que peuventy prendre Float
+
+Attention : si le fichier est modifié, il faut le vérifier à nouveau et
+copier la sortie dans src/test/deca/valid/others/expected
+*/
+
+{
+    float test;
+    float a = 12.45;
+    float b = 3.4f;
+    float c = 3.4F;
+    float d = 3.4E+3;
+    float e = 3.4E+3f;
+    float f = 3.4E+3F;
+    float g = 3.4E-3;
+    float i = 3.4e+3;
+    float j = 3.4e+3f;
+    float k = 0xAA.FFP+30;
+    float l = 0Xaa.FFP+27f;
+    float m = 0X4a4.FFp-38F;
+}

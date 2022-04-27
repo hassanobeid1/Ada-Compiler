@@ -1,0 +1,11 @@
+//Test invalid: bracket en plus pour la classe
+
+class MyClass{{
+  int a;
+ }
+
+
+
+{
+
+}

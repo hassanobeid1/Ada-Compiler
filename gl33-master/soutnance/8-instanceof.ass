@@ -1,0 +1,194 @@
+; start main program
+	TSTO #8	; TSTO
+	BOV pile_pleine
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 4(GB)
+	LEA 3(GB), R0
+	STORE R0, 5(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 6(GB)
+	LEA 1(GB), R0
+	STORE R0, 7(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 8(GB)
+	ADDSP #8
+; Main program
+	TSTO #3	; TSTO
+	BOV pile_pleine
+	ADDSP #3
+	NEW #1, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a2_A.init
+	POP R2
+	STORE R2, 9(LB)
+	NEW #1, R2
+	LEA 5(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a3_B.init
+	POP R2
+	STORE R2, 10(LB)
+	NEW #1, R2
+	LEA 7(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a4_C.init
+	POP R2
+	STORE R2, 11(LB)
+; Beginning of instructions:
+	LOAD 9(LB), R3
+	CMP #null, R3
+	BEQ dereferencement.null
+; A instance of A?
+a8_debut_boucle:
+	LOAD 0(R3), R3
+	BEQ a6_debut_else
+	LEA 3(GB), R0
+	CMP R0, R3
+	BEQ a9_fin_boucle
+	BRA a8_debut_boucle
+a9_fin_boucle:
+	LOAD 10(LB), R3
+	CMP #null, R3
+	BEQ dereferencement.null
+; B instance of A?
+a12_debut_boucle:
+	LOAD 0(R3), R3
+	BEQ a10_debut_else
+	LEA 3(GB), R0
+	CMP R0, R3
+	BEQ a13_fin_boucle
+	BRA a12_debut_boucle
+a13_fin_boucle:
+	LOAD 11(LB), R3
+	CMP #null, R3
+	BEQ dereferencement.null
+; C instance of A?
+a16_debut_boucle:
+	LOAD 0(R3), R3
+	BEQ a17_fin_boucle
+	LEA 3(GB), R0
+	CMP R0, R3
+	BEQ a14_debut_else
+	BRA a16_debut_boucle
+a17_fin_boucle:
+	WSTR "ok"
+	WNL
+	BRA a15_fin_else
+a14_debut_else:
+a15_fin_else:
+	BRA a11_fin_else
+a10_debut_else:
+a11_fin_else:
+	BRA a7_fin_else
+a6_debut_else:
+a7_fin_else:
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : tentative de division par 0"
+	WNL
+	ERROR
+modulo0:
+	WSTR "Erreur : tentative d'obtenir le reste d'une division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a2_A.init:
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD -2(LB), R2
+	LOAD #0, R0
+	PUSH R2
+	BSR a0_Object.init
+	SUBSP #1
+	POP R2
+	RTS
+a3_B.init:
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD -2(LB), R2
+	LOAD #0, R0
+	PUSH R2
+	BSR a2_A.init
+	SUBSP #1
+	POP R2
+	RTS
+a4_C.init:
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD -2(LB), R2
+	LOAD #0, R0
+	PUSH R2
+	BSR a0_Object.init
+	SUBSP #1
+	POP R2
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a18_Eq
+	LOAD #0, R0
+	RTS
+a18_Eq:
+	LOAD #1, R0
+	RTS
+; end main program

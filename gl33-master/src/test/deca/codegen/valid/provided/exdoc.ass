@@ -1,0 +1,171 @@
+; start main program
+	TSTO #6	; TSTO
+	BOV pile_pleine
+a4_Object:
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD a2_getX, R0
+	STORE R0, 5(GB)
+	LOAD a3_setX, R0
+	STORE R0, 6(GB)
+	ADDSP #6
+; Main program
+	TSTO #5	; TSTO
+	BOV pile_pleine
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	NEW #2, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a5_A.init
+	POP R2
+	STORE R2, 7(LB)
+	ADDSP #1
+; Beginning of instructions:
+	ADDSP #2
+	LOAD 7(LB), R2
+	STORE R2, 0(SP)
+	LOAD #1, R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	BEQ dereferencement.null
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #2
+	LOAD R0, R2
+	WSTR "a.getX() = "
+	ADDSP #1
+	LOAD 7(LB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	BEQ dereferencement.null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WNL
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a5_A.init:
+	TSTO #3	; TSTO
+	BOV pile_pleine
+	LOAD -2(LB), R1
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD #0, R0
+	STORE R0, 1(R1)
+	PUSH R1
+	BSR a0_Object.init
+	SUBSP #1
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a7_Eq
+	LOAD #0, R0
+	RTS
+a7_Eq:
+	LOAD #1, R0
+	RTS
+; Code de la methode getX
+a2_getX:
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	LOAD -2(LB), R1
+	BEQ dereferencement.null
+	LOAD 1(R1), R0
+	BRA a8_return
+	WSTR "Erreur : sortie de la methode sans return"
+	WNL
+	ERROR
+a8_return:
+	POP R2
+	RTS
+; Code de la methode setX
+a3_setX:
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	LOAD -3(LB), R2
+	LOAD -2(LB), R1
+	CMP #null, R1
+	BEQ dereferencement.null
+	STORE R2, 1(R1)
+	POP R2
+	RTS
+; end main program

@@ -1,0 +1,149 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:50) - verify program: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:34) - verify listClass: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:38) - verify listClass: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:52) - Passe 1 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:54) - Passe 2 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:56) - Passe 3 Classes OK
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:28) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:34) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:58) - verify program: end
+`> [24, 0] Program
+   +> [1, 0] ListDeclClass [List with 2 elements]
+   |  []> [1, 0] DeclClass
+   |  ||  +> [1, 6] Identifier (Hello)
+   |  ||  |  definition: type defined at [1, 6], type=Hello
+   |  ||  +> [1, 12] Identifier (Object)
+   |  ||  |  definition: type (builtin), type=Object
+   |  ||  +> ListDeclField [List with 2 elements]
+   |  ||  |  []> [3, 8] DeclField
+   |  ||  |  ||  +> [3, 4] Identifier (int)
+   |  ||  |  ||  |  definition: type (builtin), type=int
+   |  ||  |  ||  +> [3, 8] Identifier (a)
+   |  ||  |  ||  |  definition: field defined at [3, 8], type=int
+   |  ||  |  ||  `> [3, 12] Initialization
+   |  ||  |  ||     `> [3, 12] Int (2)
+   |  ||  |  ||        type: int
+   |  ||  |  []> [4, 18] DeclField
+   |  ||  |      +> [4, 14] Identifier (int)
+   |  ||  |      |  definition: type (builtin), type=int
+   |  ||  |      +> [4, 18] Identifier (b)
+   |  ||  |      |  definition: field defined at [4, 18], type=int
+   |  ||  |      `> [4, 18] NoInitialization
+   |  ||  `> ListDeclMethod [List with 2 elements]
+   |  ||     []> [6, 4] DeclMethod
+   |  ||     ||  +> [6, 4] Identifier (int)
+   |  ||     ||  |  definition: type (builtin), type=int
+   |  ||     ||  +> [6, 8] Identifier (bonjour)
+   |  ||     ||  |  definition: method defined at [6, 8], type=int
+   |  ||     ||  +> [6, 16] ListParameter [List with 1 elements]
+   |  ||     ||  |  []> [6, 16] Parameter
+   |  ||     ||  |      +> [6, 16] Identifier (boolean)
+   |  ||     ||  |      |  definition: type (builtin), type=boolean
+   |  ||     ||  |      `> [6, 24] Identifier (b)
+   |  ||     ||  |         definition: parameter defined at [6, 24], type=boolean
+   |  ||     ||  `> [6, 27] BlockBody
+   |  ||     ||     +> ListDeclVar [List with 2 elements]
+   |  ||     ||     |  []> [7, 12] DeclVar
+   |  ||     ||     |  ||  +> [7, 8] Identifier (int)
+   |  ||     ||     |  ||  |  definition: type (builtin), type=int
+   |  ||     ||     |  ||  +> [7, 12] Identifier (a1)
+   |  ||     ||     |  ||  |  definition: variable defined at [7, 12], type=int
+   |  ||     ||     |  ||  `> [7, 12] Initialization
+   |  ||     ||     |  ||     `> [7, 17] MethodCall
+   |  ||     ||     |  ||        type: int
+   |  ||     ||     |  ||        +> [7, 17] This
+   |  ||     ||     |  ||        |  type: Hello
+   |  ||     ||     |  ||        `> [7, 22] FunctionCall
+   |  ||     ||     |  ||           type: int
+   |  ||     ||     |  ||           +> [7, 22] Identifier (getA)
+   |  ||     ||     |  ||           |  definition: method defined at [11, 8], type=int
+   |  ||     ||     |  ||           `> [7, 27] ListExpr [List with 0 elements]
+   |  ||     ||     |  []> [8, 12] DeclVar
+   |  ||     ||     |      +> [8, 8] Identifier (int)
+   |  ||     ||     |      |  definition: type (builtin), type=int
+   |  ||     ||     |      +> [8, 12] Identifier (a2)
+   |  ||     ||     |      |  definition: variable defined at [8, 12], type=int
+   |  ||     ||     |      `> [8, 12] Initialization
+   |  ||     ||     |         `> [8, 17] FunctionCall
+   |  ||     ||     |            type: int
+   |  ||     ||     |            +> [8, 17] Identifier (getA)
+   |  ||     ||     |            |  definition: method defined at [11, 8], type=int
+   |  ||     ||     |            `> [8, 22] ListExpr [List with 0 elements]
+   |  ||     ||     `> [9, 4] ListInst [List with 0 elements]
+   |  ||     []> [11, 4] DeclMethod
+   |  ||         +> [11, 4] Identifier (int)
+   |  ||         |  definition: type (builtin), type=int
+   |  ||         +> [11, 8] Identifier (getA)
+   |  ||         |  definition: method defined at [11, 8], type=int
+   |  ||         +> [11, 13] ListParameter [List with 0 elements]
+   |  ||         `> [11, 15] BlockBody
+   |  ||            +> ListDeclVar [List with 0 elements]
+   |  ||            `> [12, 8] ListInst [List with 1 elements]
+   |  ||               []> [12, 15] Return
+   |  ||                   `> [12, 15] Attribute
+   |  ||                      type: int
+   |  ||                      +> [12, 15] This
+   |  ||                      |  type: Hello
+   |  ||                      `> [12, 20] Identifier (a)
+   |  ||                         definition: field defined at [3, 8], type=int
+   |  []> [16, 0] DeclClass
+   |      +> [16, 6] Identifier (X)
+   |      |  definition: type defined at [16, 6], type=X
+   |      +> [16, 16] Identifier (Hello)
+   |      |  definition: type defined at [1, 6], type=Hello
+   |      +> ListDeclField [List with 1 elements]
+   |      |  []> [17, 10] DeclField
+   |      |      +> [17, 4] Identifier (Hello)
+   |      |      |  definition: type defined at [1, 6], type=Hello
+   |      |      +> [17, 10] Identifier (x)
+   |      |      |  definition: field defined at [17, 10], type=Hello
+   |      |      `> [17, 14] Initialization
+   |      |         `> [17, 14] New
+   |      |            type: Hello
+   |      |            `> [17, 18] Identifier (Hello)
+   |      |               definition: type defined at [1, 6], type=Hello
+   |      `> ListDeclMethod [List with 1 elements]
+   |         []> [19, 4] DeclMethod
+   |             +> [19, 4] Identifier (int)
+   |             |  definition: type (builtin), type=int
+   |             +> [19, 8] Identifier (getA)
+   |             |  definition: method defined at [19, 8], type=int
+   |             +> [19, 13] ListParameter [List with 0 elements]
+   |             `> [19, 15] BlockBody
+   |                +> ListDeclVar [List with 0 elements]
+   |                `> [20, 8] ListInst [List with 1 elements]
+   |                   []> [20, 15] Return
+   |                       `> [20, 15] Attribute
+   |                          type: int
+   |                          +> [20, 15] Identifier (x)
+   |                          |  definition: field defined at [17, 10], type=Hello
+   |                          `> [20, 17] Identifier (a)
+   |                             definition: field defined at [3, 8], type=int
+   `> [24, 0] Main
+      +> ListDeclVar [List with 1 elements]
+      |  []> [25, 6] DeclVar
+      |      +> [25, 4] Identifier (X)
+      |      |  definition: type defined at [16, 6], type=X
+      |      +> [25, 6] Identifier (x)
+      |      |  definition: variable defined at [25, 6], type=X
+      |      `> [25, 6] Initialization
+      |         `> [25, 10] New
+      |            type: X
+      |            `> [25, 14] Identifier (X)
+      |               definition: type defined at [16, 6], type=X
+      `> [26, 4] ListInst [List with 2 elements]
+         []> [26, 12] Println
+         ||  `> [26, 12] ListExpr [List with 1 elements]
+         ||     []> [26, 12] MethodCall
+         ||         type: int
+         ||         +> [26, 12] Identifier (x)
+         ||         |  definition: variable defined at [25, 6], type=X
+         ||         `> [26, 14] FunctionCall
+         ||            type: int
+         ||            +> [26, 14] Identifier (getA)
+         ||            |  definition: method defined at [19, 8], type=int
+         ||            `> [26, 19] ListExpr [List with 0 elements]
+         []> [27, 12] Println
+             `> [27, 12] ListExpr [List with 1 elements]
+                []> [27, 12] StringLiteral (ok)
+                    type: String

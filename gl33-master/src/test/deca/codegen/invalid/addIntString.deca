@@ -1,0 +1,8 @@
+/*
+Test sur l'addition d'un string et d'un int
+*/
+
+{
+    int b = 2 + "World";
+    println("Hello" + 2);
+}

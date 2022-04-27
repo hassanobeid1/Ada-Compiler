@@ -1,0 +1,158 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:50) - verify program: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:34) - verify listClass: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:38) - verify listClass: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:52) - Passe 1 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:54) - Passe 2 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:56) - Passe 3 Classes OK
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:28) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:34) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:58) - verify program: end
+`> [4, 0] Program
+   +> [4, 0] ListDeclClass [List with 0 elements]
+   `> [4, 0] Main
+      +> ListDeclVar [List with 3 elements]
+      |  []> [5, 8] DeclVar
+      |  ||  +> [5, 4] Identifier (int)
+      |  ||  |  definition: type (builtin), type=int
+      |  ||  +> [5, 8] Identifier (x)
+      |  ||  |  definition: variable defined at [5, 8], type=int
+      |  ||  `> [5, 8] Initialization
+      |  ||     `> [5, 12] Int (1)
+      |  ||        type: int
+      |  []> [6, 8] DeclVar
+      |  ||  +> [6, 4] Identifier (int)
+      |  ||  |  definition: type (builtin), type=int
+      |  ||  +> [6, 8] Identifier (y)
+      |  ||  |  definition: variable defined at [6, 8], type=int
+      |  ||  `> [6, 8] Initialization
+      |  ||     `> [6, 12] Int (1)
+      |  ||        type: int
+      |  []> [7, 8] DeclVar
+      |      +> [7, 4] Identifier (int)
+      |      |  definition: type (builtin), type=int
+      |      +> [7, 8] Identifier (z)
+      |      |  definition: variable defined at [7, 8], type=int
+      |      `> [7, 8] Initialization
+      |         `> [7, 12] Int (1)
+      |            type: int
+      `> [9, 4] ListInst [List with 12 elements]
+         []> [9, 4] Assign
+         ||  type: int
+         ||  +> [9, 4] Identifier (x)
+         ||  |  definition: variable defined at [5, 8], type=int
+         ||  `> [9, 8] Plus
+         ||     type: int
+         ||     +> [9, 8] Identifier (y)
+         ||     |  definition: variable defined at [6, 8], type=int
+         ||     `> [9, 12] Identifier (z)
+         ||        definition: variable defined at [7, 8], type=int
+         []> [10, 4] Assign
+         ||  type: int
+         ||  +> [10, 4] Identifier (x)
+         ||  |  definition: variable defined at [5, 8], type=int
+         ||  `> [10, 8] Minus
+         ||     type: int
+         ||     +> [10, 8] Identifier (y)
+         ||     |  definition: variable defined at [6, 8], type=int
+         ||     `> [10, 12] Identifier (z)
+         ||        definition: variable defined at [7, 8], type=int
+         []> [11, 4] Assign
+         ||  type: int
+         ||  +> [11, 4] Identifier (x)
+         ||  |  definition: variable defined at [5, 8], type=int
+         ||  `> [11, 8] Multiply
+         ||     type: int
+         ||     +> [11, 8] Identifier (y)
+         ||     |  definition: variable defined at [6, 8], type=int
+         ||     `> [11, 12] Identifier (z)
+         ||        definition: variable defined at [7, 8], type=int
+         []> [12, 4] Assign
+         ||  type: int
+         ||  +> [12, 4] Identifier (x)
+         ||  |  definition: variable defined at [5, 8], type=int
+         ||  `> [12, 8] Divide
+         ||     type: int
+         ||     +> [12, 8] Identifier (y)
+         ||     |  definition: variable defined at [6, 8], type=int
+         ||     `> [12, 12] Identifier (z)
+         ||        definition: variable defined at [7, 8], type=int
+         []> [14, 4] Assign
+         ||  type: int
+         ||  +> [14, 4] Identifier (y)
+         ||  |  definition: variable defined at [6, 8], type=int
+         ||  `> [14, 8] Plus
+         ||     type: int
+         ||     +> [14, 8] Identifier (x)
+         ||     |  definition: variable defined at [5, 8], type=int
+         ||     `> [14, 12] Identifier (z)
+         ||        definition: variable defined at [7, 8], type=int
+         []> [15, 4] Assign
+         ||  type: int
+         ||  +> [15, 4] Identifier (y)
+         ||  |  definition: variable defined at [6, 8], type=int
+         ||  `> [15, 8] Minus
+         ||     type: int
+         ||     +> [15, 8] Identifier (x)
+         ||     |  definition: variable defined at [5, 8], type=int
+         ||     `> [15, 12] Identifier (z)
+         ||        definition: variable defined at [7, 8], type=int
+         []> [16, 4] Assign
+         ||  type: int
+         ||  +> [16, 4] Identifier (y)
+         ||  |  definition: variable defined at [6, 8], type=int
+         ||  `> [16, 8] Multiply
+         ||     type: int
+         ||     +> [16, 8] Identifier (x)
+         ||     |  definition: variable defined at [5, 8], type=int
+         ||     `> [16, 12] Identifier (z)
+         ||        definition: variable defined at [7, 8], type=int
+         []> [17, 4] Assign
+         ||  type: int
+         ||  +> [17, 4] Identifier (y)
+         ||  |  definition: variable defined at [6, 8], type=int
+         ||  `> [17, 8] Divide
+         ||     type: int
+         ||     +> [17, 8] Identifier (x)
+         ||     |  definition: variable defined at [5, 8], type=int
+         ||     `> [17, 12] Identifier (z)
+         ||        definition: variable defined at [7, 8], type=int
+         []> [19, 4] Assign
+         ||  type: int
+         ||  +> [19, 4] Identifier (z)
+         ||  |  definition: variable defined at [7, 8], type=int
+         ||  `> [19, 8] Plus
+         ||     type: int
+         ||     +> [19, 8] Identifier (x)
+         ||     |  definition: variable defined at [5, 8], type=int
+         ||     `> [19, 12] Identifier (y)
+         ||        definition: variable defined at [6, 8], type=int
+         []> [20, 4] Assign
+         ||  type: int
+         ||  +> [20, 4] Identifier (z)
+         ||  |  definition: variable defined at [7, 8], type=int
+         ||  `> [20, 8] Minus
+         ||     type: int
+         ||     +> [20, 8] Identifier (x)
+         ||     |  definition: variable defined at [5, 8], type=int
+         ||     `> [20, 12] Identifier (y)
+         ||        definition: variable defined at [6, 8], type=int
+         []> [21, 4] Assign
+         ||  type: int
+         ||  +> [21, 4] Identifier (z)
+         ||  |  definition: variable defined at [7, 8], type=int
+         ||  `> [21, 8] Multiply
+         ||     type: int
+         ||     +> [21, 8] Identifier (x)
+         ||     |  definition: variable defined at [5, 8], type=int
+         ||     `> [21, 12] Identifier (y)
+         ||        definition: variable defined at [6, 8], type=int
+         []> [22, 4] Assign
+             type: int
+             +> [22, 4] Identifier (z)
+             |  definition: variable defined at [7, 8], type=int
+             `> [22, 8] Divide
+                type: int
+                +> [22, 8] Identifier (x)
+                |  definition: variable defined at [5, 8], type=int
+                `> [22, 12] Identifier (y)
+                   definition: variable defined at [6, 8], type=int

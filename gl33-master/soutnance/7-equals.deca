@@ -1,0 +1,13 @@
+class A {}
+
+class B {}
+
+{
+    A a1 = new A();
+    B a2 = new B();
+    if (a1 != a2) {
+        if (a1.equals(a1)) {
+            println("ok");
+        }
+    }
+}

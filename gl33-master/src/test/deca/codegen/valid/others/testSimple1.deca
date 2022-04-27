@@ -1,0 +1,11 @@
+// Description:
+//    test d'affichage chaine de caractere
+//
+// Resultats:
+//    affiche "Hello"
+//
+// Historique:
+//    cree le 01/01/2021
+{
+	println("Hello");
+}

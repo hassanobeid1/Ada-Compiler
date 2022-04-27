@@ -1,0 +1,15 @@
+class Hello {
+
+    int a = 2;
+    protected boolean b;
+
+    int bonjour(boolean b) {
+        println("hello");
+        return a;
+    }
+}
+
+{
+    Hello x = new Hello();
+    x.bonjour(true,2);
+}

@@ -1,0 +1,12 @@
+// Invalid
+// ifthenelse fausse
+
+{
+    String s = "true";
+    
+    if(s){
+        println("non");
+    }
+
+
+}

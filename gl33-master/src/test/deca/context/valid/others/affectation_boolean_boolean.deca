@@ -1,0 +1,10 @@
+// Valid test
+// Affectation d'un boolean à un autre boolean
+
+{
+   boolean x = true;
+   boolean y = false;
+
+   x = y;
+   y = x;
+}

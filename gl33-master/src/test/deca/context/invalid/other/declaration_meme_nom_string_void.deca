@@ -1,0 +1,8 @@
+// Invalid
+// Déclaration des variables de même nom (string et void)
+
+
+{
+   String a;
+   void a;
+}

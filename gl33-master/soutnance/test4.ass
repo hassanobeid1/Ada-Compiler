@@ -1,0 +1,120 @@
+; start main program
+	TSTO #6	; TSTO
+	BOV pile_pleine
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 4(GB)
+	LEA 1(GB), R0
+	STORE R0, 5(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 6(GB)
+	ADDSP #6
+; Main program
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	ADDSP #1
+; Beginning of instructions:
+	LOAD #null, R2
+	STORE R2, 7(LB)
+	LOAD 7(LB), R3
+	CMP #null, R3
+	BEQ a5_debut_else
+; A instance of B?
+a7_debut_boucle:
+	LOAD 0(R3), R3
+	BEQ a5_debut_else
+	LEA 5(GB), R0
+	CMP R0, R3
+	BEQ a8_fin_boucle
+	BRA a7_debut_boucle
+a8_fin_boucle:
+	WSTR "erreur"
+	WNL
+	BRA a6_fin_else
+a5_debut_else:
+	WSTR "ok"
+	WNL
+a6_fin_else:
+	WNL
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : tentative de division par 0"
+	WNL
+	ERROR
+modulo0:
+	WSTR "Erreur : tentative d'obtenir le reste d'une division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a2_A.init:
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD -2(LB), R2
+	LOAD #0, R0
+	PUSH R2
+	BSR a0_Object.init
+	SUBSP #1
+	POP R2
+	RTS
+a3_B.init:
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD -2(LB), R2
+	LOAD #0, R0
+	PUSH R2
+	BSR a0_Object.init
+	SUBSP #1
+	POP R2
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a9_Eq
+	LOAD #0, R0
+	RTS
+a9_Eq:
+	LOAD #1, R0
+	RTS
+; end main program

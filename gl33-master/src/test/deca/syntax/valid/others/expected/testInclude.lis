@@ -1,0 +1,32 @@
+`> [9, 0] Program
+   +> [9, 0] ListDeclClass [List with 0 elements]
+   `> [9, 0] Main
+      +> ListDeclVar [List with 0 elements]
+      `> [10, 4] ListInst [List with 2 elements]
+         []> [10, 8] IfThenElse
+         ||  +> [10, 8] Equals
+         ||  |  +> [10, 8] Int (1)
+         ||  |  `> [10, 13] Int (1)
+         ||  +> [11, 8] ListInst [List with 2 elements]
+         ||  |  []> [11, 16] Println
+         ||  |  ||  `> [11, 16] ListExpr [List with 1 elements]
+         ||  |  ||     []> [11, 16] StringLiteral (Hello)
+         ||  |  []> [12, 16] Println
+         ||  |      `> [12, 16] ListExpr [List with 1 elements]
+         ||  |         []> [12, 16] StringLiteral (On passe dans le if d'une condiiton true)
+         ||  `> ListInst [List with 1 elements]
+         ||     []> [14, 16] Println
+         ||         `> [14, 16] ListExpr [List with 1 elements]
+         ||            []> [14, 16] StringLiteral (Erreur : on passe dans le else d'une condiiton true)
+         []> [18, 7] IfThenElse
+             +> [18, 7] Equals
+             |  +> [18, 7] Int (1)
+             |  `> [18, 12] Int (0)
+             +> [19, 8] ListInst [List with 1 elements]
+             |  []> [19, 16] Println
+             |      `> [19, 16] ListExpr [List with 1 elements]
+             |         []> [19, 16] StringLiteral (Erreur : on passe dans le if d'une condiiton false)
+             `> ListInst [List with 1 elements]
+                []> [22, 16] Println
+                    `> [22, 16] ListExpr [List with 1 elements]
+                       []> [22, 16] StringLiteral (On passe dans le else d'une condiiton false)

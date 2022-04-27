@@ -1,0 +1,147 @@
+; start main program
+	TSTO #5	; TSTO
+	BOV pile_pleine
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD a2_test, R0
+	STORE R0, 5(GB)
+	ADDSP #5
+; Main program
+	TSTO #9	; TSTO
+	BOV pile_pleine
+	ADDSP #2
+	NEW #1, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a3_A.init
+	POP R2
+	STORE R2, 6(LB)
+	LOAD #0, R2
+	STORE R2, 7(LB)
+; Beginning of instructions:
+	ADDSP #5
+	LOAD 6(LB), R2
+	STORE R2, 0(SP)
+	LOAD 7(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 7(LB)
+	STORE R2, -1(SP)
+	LOAD 7(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 7(LB)
+	STORE R2, -2(SP)
+	LOAD 7(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 7(LB)
+	STORE R2, -3(SP)
+	LOAD 7(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 7(LB)
+	STORE R2, -4(SP)
+	LOAD 0(SP), R2
+	BEQ dereferencement.null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #5
+	LOAD R0, R2
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : tentative de division par 0"
+	WNL
+	ERROR
+modulo0:
+	WSTR "Erreur : tentative d'obtenir le reste d'une division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a3_A.init:
+	TSTO #4	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD -2(LB), R2
+	LOAD #0, R0
+	PUSH R2
+	BSR a0_Object.init
+	SUBSP #1
+	POP R2
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a5_Eq
+	LOAD #0, R0
+	RTS
+a5_Eq:
+	LOAD #1, R0
+	RTS
+; Code de la methode test
+a2_test:
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	LOAD -3(LB), R2
+	LOAD R2, R1
+	WINT
+	WNL
+	LOAD -4(LB), R2
+	LOAD R2, R1
+	WINT
+	WNL
+	LOAD -5(LB), R2
+	LOAD R2, R1
+	WINT
+	WNL
+	LOAD -6(LB), R2
+	LOAD R2, R1
+	WINT
+	WNL
+	POP R2
+	RTS
+; end main program

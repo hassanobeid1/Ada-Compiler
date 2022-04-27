@@ -1,0 +1,9 @@
+// Invalid test
+// Affectation d'un void à un flottant
+
+{
+   float x;
+   void v;
+
+   x = v;
+}

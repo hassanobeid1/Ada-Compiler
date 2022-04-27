@@ -1,0 +1,13 @@
+class A {
+    int a = 1+1;
+    int b;
+}
+
+class B extends A {
+    int c = a + b + 2;
+}
+
+{
+    B b = new B();
+    println(b.a, " ", b.b, " ", b.c);
+}

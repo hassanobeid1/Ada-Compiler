@@ -1,0 +1,18 @@
+// Test de contexte invalide : valeur de retour fausse (boolean au lieu de int)
+
+class MyClass{
+
+    int isPos(int a){
+        if(a > 0){
+          return true;
+        }
+        else{
+          return false;
+        }
+    }
+}
+
+{
+    MyClass m = new MyClass();
+    int x = m.isPos(4);
+}

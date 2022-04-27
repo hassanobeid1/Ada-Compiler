@@ -1,0 +1,12 @@
+{
+    int i = 0;
+    if (i>0) {
+        println("wtf");
+    } else {
+        if (i>0) {
+            println("wtf");
+        } else {
+            println("ok");
+        }
+    }
+}

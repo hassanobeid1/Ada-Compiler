@@ -1,0 +1,4 @@
+{
+    String a = "bonjour";
+    println("ok");
+}

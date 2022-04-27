@@ -1,0 +1,14 @@
+/*
+Test sur les différentes valeurs de String. Echoue car les multi-line string
+
+Attention : si le fichier est modifié, il faut le vérifier à nouveau et
+copier la sortie dans src/test/deca/valid/others/expected
+*/
+
+{
+    string a = "hello";
+    string b = "world\"";
+    string c = "home\\";
+    string d = "";
+    string e;
+}

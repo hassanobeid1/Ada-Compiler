@@ -1,0 +1,10 @@
+// Invalid test
+// Boucle while fausse (float comme entree)
+
+{
+    float x = 1.2;
+
+    while(x){
+        println("non");
+    }
+}

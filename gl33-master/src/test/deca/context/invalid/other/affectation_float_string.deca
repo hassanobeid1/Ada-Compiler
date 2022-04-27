@@ -1,0 +1,10 @@
+// Invalid test
+// Affectation d'un flottant à un string
+
+{
+   float x;
+   String s;
+
+   s = x;
+   s = 1.2;
+}

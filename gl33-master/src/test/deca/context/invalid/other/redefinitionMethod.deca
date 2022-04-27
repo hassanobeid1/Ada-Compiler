@@ -1,0 +1,20 @@
+class Hello {
+
+    int a = 2;
+    protected boolean b;
+
+    void bonjour(boolean a) {
+        println("hello");
+    }
+}
+
+class World extends Hello {
+
+    void bonjour(int a) {
+        println("hello world");
+    }
+}
+
+{
+    println("ok");
+}

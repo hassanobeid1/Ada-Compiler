@@ -1,0 +1,12 @@
+// Description:
+//    tests d'afficher un boolean
+//
+// Resultats:
+//    renvoie une erreur de type pour le print
+//
+// Historique:
+//    cree le 01/01/2021
+{
+    boolean a = false;
+    print(a);
+}

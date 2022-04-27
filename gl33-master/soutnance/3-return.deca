@@ -1,0 +1,17 @@
+class A {
+    int a = 1;
+
+    int getA() {
+        return a;
+    }
+
+    int getB() {
+
+    }
+}
+
+{
+    A a = new A();
+    println(a.getA());
+    println(a.getB());
+}

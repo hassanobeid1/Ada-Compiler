@@ -1,0 +1,9 @@
+// Invalid test
+// Affectation d'un void à un boolean
+
+{
+   void v;
+   boolean b;
+   
+   b = v;
+}

@@ -1,0 +1,10 @@
+// Test invalid : utiliser une instance sans le mot clé new
+
+class MyClass{
+   protected int a;
+}
+
+{
+    MyClass m;
+    m.a = 1;
+}

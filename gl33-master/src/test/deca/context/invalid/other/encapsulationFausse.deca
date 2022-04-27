@@ -1,0 +1,10 @@
+// Test invalid: utilisation d'un attribut protected
+
+class MyClass{
+    protected int a;
+}
+
+{
+    MyClass m = new MyClass();
+    int b = m.a;
+}

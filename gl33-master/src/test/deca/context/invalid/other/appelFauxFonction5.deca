@@ -1,0 +1,13 @@
+// Test de contexte invalide : appel faux de la fonction (boolean au lieu de int)
+
+class MyClass{
+
+    int puissance(int a){
+        return a*a;
+    }
+}
+
+{
+    MyClass m = new MyClass();
+    int x = m.puissance(true);
+}

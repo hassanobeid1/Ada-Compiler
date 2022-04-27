@@ -1,0 +1,21 @@
+// Description:
+//    tests boucle while sur une boucle while
+//
+// Resultats:
+//    affiche le résultat de la division euclidenne de 376 par 13
+//
+// Historique:
+//    cree le 01/01/2021
+{
+    int n = 376;
+    int d = 13;
+    int q = 0;
+    int r;
+    while ((q+1)*d <= n){
+        q = q + 1;
+    }
+    r = n - (q * 13);
+    println("le résultat de la division euclidienne de 376 par 13 est :");
+    println("Quotient : ", q);
+    print("Reste : ", r);
+}

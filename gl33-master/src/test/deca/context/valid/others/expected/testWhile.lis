@@ -1,0 +1,212 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:50) - verify program: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:34) - verify listClass: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:38) - verify listClass: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:52) - Passe 1 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:54) - Passe 2 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:56) - Passe 3 Classes OK
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:28) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:34) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:58) - verify program: end
+`> [5, 0] Program
+   +> [5, 0] ListDeclClass [List with 0 elements]
+   `> [5, 0] Main
+      +> ListDeclVar [List with 4 elements]
+      |  []> [6, 8] DeclVar
+      |  ||  +> [6, 4] Identifier (int)
+      |  ||  |  definition: type (builtin), type=int
+      |  ||  +> [6, 8] Identifier (a)
+      |  ||  |  definition: variable defined at [6, 8], type=int
+      |  ||  `> [6, 8] Initialization
+      |  ||     `> [6, 12] Int (1)
+      |  ||        type: int
+      |  []> [7, 12] DeclVar
+      |  ||  +> [7, 4] Identifier (boolean)
+      |  ||  |  definition: type (builtin), type=boolean
+      |  ||  +> [7, 12] Identifier (b)
+      |  ||  |  definition: variable defined at [7, 12], type=boolean
+      |  ||  `> [7, 12] Initialization
+      |  ||     `> [7, 16] BooleanLiteral (true)
+      |  ||        type: boolean
+      |  []> [8, 12] DeclVar
+      |  ||  +> [8, 4] Identifier (boolean)
+      |  ||  |  definition: type (builtin), type=boolean
+      |  ||  +> [8, 12] Identifier (c)
+      |  ||  |  definition: variable defined at [8, 12], type=boolean
+      |  ||  `> [8, 12] Initialization
+      |  ||     `> [8, 16] BooleanLiteral (true)
+      |  ||        type: boolean
+      |  []> [9, 8] DeclVar
+      |      +> [9, 4] Identifier (int)
+      |      |  definition: type (builtin), type=int
+      |      +> [9, 8] Identifier (d)
+      |      |  definition: variable defined at [9, 8], type=int
+      |      `> [9, 8] Initialization
+      |         `> [9, 12] Int (2)
+      |            type: int
+      `> [11, 4] ListInst [List with 12 elements]
+         []> [11, 10] While
+         ||  +> [11, 10] Equals
+         ||  |  type: boolean
+         ||  |  +> [11, 10] Identifier (a)
+         ||  |  |  definition: variable defined at [6, 8], type=int
+         ||  |  `> [11, 15] Int (1)
+         ||  |     type: int
+         ||  `> [12, 8] ListInst [List with 1 elements]
+         ||     []> [12, 8] Assign
+         ||         type: int
+         ||         +> [12, 8] Identifier (a)
+         ||         |  definition: variable defined at [6, 8], type=int
+         ||         `> [12, 12] Plus
+         ||            type: int
+         ||            +> [12, 12] Identifier (a)
+         ||            |  definition: variable defined at [6, 8], type=int
+         ||            `> [12, 16] Int (1)
+         ||               type: int
+         []> [14, 10] While
+         ||  +> [14, 10] Identifier (b)
+         ||  |  definition: variable defined at [7, 12], type=boolean
+         ||  `> [15, 8] ListInst [List with 1 elements]
+         ||     []> [15, 8] Assign
+         ||         type: boolean
+         ||         +> [15, 8] Identifier (b)
+         ||         |  definition: variable defined at [7, 12], type=boolean
+         ||         `> [15, 13] Not
+         ||            type: boolean
+         ||            `> [15, 13] Identifier (b)
+         ||               definition: variable defined at [7, 12], type=boolean
+         []> [18, 10] While
+         ||  +> [18, 11] Not
+         ||  |  type: boolean
+         ||  |  `> [18, 11] Identifier (b)
+         ||  |     definition: variable defined at [7, 12], type=boolean
+         ||  `> [19, 8] ListInst [List with 1 elements]
+         ||     []> [19, 8] Assign
+         ||         type: boolean
+         ||         +> [19, 8] Identifier (b)
+         ||         |  definition: variable defined at [7, 12], type=boolean
+         ||         `> [19, 13] Not
+         ||            type: boolean
+         ||            `> [19, 13] Identifier (b)
+         ||               definition: variable defined at [7, 12], type=boolean
+         []> [22, 10] While
+         ||  +> [22, 10] Or
+         ||  |  type: boolean
+         ||  |  +> [22, 10] Identifier (c)
+         ||  |  |  definition: variable defined at [8, 12], type=boolean
+         ||  |  `> [22, 15] Identifier (b)
+         ||  |     definition: variable defined at [7, 12], type=boolean
+         ||  `> [24, 8] ListInst [List with 1 elements]
+         ||     []> [24, 8] Assign
+         ||         type: boolean
+         ||         +> [24, 8] Identifier (c)
+         ||         |  definition: variable defined at [8, 12], type=boolean
+         ||         `> [24, 12] BooleanLiteral (false)
+         ||            type: boolean
+         []> [27, 4] Assign
+         ||  type: boolean
+         ||  +> [27, 4] Identifier (c)
+         ||  |  definition: variable defined at [8, 12], type=boolean
+         ||  `> [27, 8] BooleanLiteral (true)
+         ||     type: boolean
+         []> [28, 4] Assign
+         ||  type: boolean
+         ||  +> [28, 4] Identifier (b)
+         ||  |  definition: variable defined at [7, 12], type=boolean
+         ||  `> [28, 8] BooleanLiteral (true)
+         ||     type: boolean
+         []> [30, 10] While
+         ||  +> [30, 10] And
+         ||  |  type: boolean
+         ||  |  +> [30, 10] Identifier (b)
+         ||  |  |  definition: variable defined at [7, 12], type=boolean
+         ||  |  `> [30, 15] Identifier (c)
+         ||  |     definition: variable defined at [8, 12], type=boolean
+         ||  `> [31, 8] ListInst [List with 1 elements]
+         ||     []> [31, 8] Assign
+         ||         type: boolean
+         ||         +> [31, 8] Identifier (b)
+         ||         |  definition: variable defined at [7, 12], type=boolean
+         ||         `> [31, 12] BooleanLiteral (false)
+         ||            type: boolean
+         []> [34, 10] While
+         ||  +> [34, 10] And
+         ||  |  type: boolean
+         ||  |  +> [34, 11] Not
+         ||  |  |  type: boolean
+         ||  |  |  `> [34, 11] Identifier (b)
+         ||  |  |     definition: variable defined at [7, 12], type=boolean
+         ||  |  `> [34, 16] Identifier (c)
+         ||  |     definition: variable defined at [8, 12], type=boolean
+         ||  `> [35, 8] ListInst [List with 1 elements]
+         ||     []> [35, 8] Assign
+         ||         type: boolean
+         ||         +> [35, 8] Identifier (b)
+         ||         |  definition: variable defined at [7, 12], type=boolean
+         ||         `> [35, 12] BooleanLiteral (true)
+         ||            type: boolean
+         []> [38, 11] While
+         ||  +> [38, 11] Equals
+         ||  |  type: boolean
+         ||  |  +> [38, 11] Identifier (a)
+         ||  |  |  definition: variable defined at [6, 8], type=int
+         ||  |  `> [38, 16] Identifier (d)
+         ||  |     definition: variable defined at [9, 8], type=int
+         ||  `> [39, 8] ListInst [List with 1 elements]
+         ||     []> [39, 8] Assign
+         ||         type: int
+         ||         +> [39, 8] Identifier (d)
+         ||         |  definition: variable defined at [9, 8], type=int
+         ||         `> [39, 12] Plus
+         ||            type: int
+         ||            +> [39, 12] Identifier (d)
+         ||            |  definition: variable defined at [9, 8], type=int
+         ||            `> [39, 16] Int (1)
+         ||               type: int
+         []> [41, 10] While
+         ||  +> [41, 10] Greater
+         ||  |  type: boolean
+         ||  |  +> [41, 10] Identifier (d)
+         ||  |  |  definition: variable defined at [9, 8], type=int
+         ||  |  `> [41, 14] Identifier (a)
+         ||  |     definition: variable defined at [6, 8], type=int
+         ||  `> [42, 8] ListInst [List with 1 elements]
+         ||     []> [42, 8] Assign
+         ||         type: int
+         ||         +> [42, 8] Identifier (a)
+         ||         |  definition: variable defined at [6, 8], type=int
+         ||         `> [42, 12] Plus
+         ||            type: int
+         ||            +> [42, 12] Identifier (a)
+         ||            |  definition: variable defined at [6, 8], type=int
+         ||            `> [42, 16] Int (2)
+         ||               type: int
+         []> [44, 10] While
+         ||  +> [44, 10] Lower
+         ||  |  type: boolean
+         ||  |  +> [44, 10] Identifier (d)
+         ||  |  |  definition: variable defined at [9, 8], type=int
+         ||  |  `> [44, 14] Identifier (a)
+         ||  |     definition: variable defined at [6, 8], type=int
+         ||  `> [45, 8] ListInst [List with 1 elements]
+         ||     []> [45, 8] Assign
+         ||         type: int
+         ||         +> [45, 8] Identifier (d)
+         ||         |  definition: variable defined at [9, 8], type=int
+         ||         `> [45, 12] Plus
+         ||            type: int
+         ||            +> [45, 12] Identifier (d)
+         ||            |  definition: variable defined at [9, 8], type=int
+         ||            `> [45, 16] Int (1)
+         ||               type: int
+         []> [47, 10] While
+             +> [47, 10] And
+             |  type: boolean
+             |  +> [47, 10] BooleanLiteral (true)
+             |  |  type: boolean
+             |  `> [47, 18] BooleanLiteral (false)
+             |     type: boolean
+             `> [48, 8] ListInst [List with 1 elements]
+                []> [48, 16] Println
+                    `> [48, 16] ListExpr [List with 1 elements]
+                       []> [48, 16] StringLiteral (hello)
+                           type: String

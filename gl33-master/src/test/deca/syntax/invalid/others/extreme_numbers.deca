@@ -1,0 +1,11 @@
+/*
+Teste les valeurs d'entiers extrême (dépassement de capacité).
+*/
+
+{
+ int i = 17179869184;
+ int j = 12;
+ println(i);
+ i = i + j;
+ println(j);
+}

@@ -1,0 +1,247 @@
+; start main program
+	TSTO #9	; TSTO
+	BOV pile_pleine
+a7_Object:
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD a2_sin, R0
+	STORE R0, 5(GB)
+	LOAD a3_cos, R0
+	STORE R0, 6(GB)
+	LOAD a4_asin, R0
+	STORE R0, 7(GB)
+	LOAD a5_atan, R0
+	STORE R0, 8(GB)
+	LOAD a6_ulp, R0
+	STORE R0, 9(GB)
+	ADDSP #9
+; Main program
+	TSTO #5	; TSTO
+	BOV pile_pleine
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	NEW #1, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a8_Math.init
+	POP R2
+	STORE R2, 1(LB)
+	ADDSP #1
+; Beginning of instructions:
+	WSTR "cos(0.0) = "
+	ADDSP #2
+	LOAD 1(LB), R2
+	STORE R2, 0(SP)
+	LOAD #0x0.0p0, R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	BEQ dereferencement.null
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #2
+	LOAD R0, R2
+	LOAD R2, R1
+	WFLOAT
+	WNL
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a8_Math.init:
+	TSTO #3	; TSTO
+	BOV pile_pleine
+	LOAD -2(LB), R1
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD #0, R0
+	PUSH R1
+	BSR a0_Object.init
+	SUBSP #1
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a10_Eq
+	LOAD #0, R0
+	RTS
+a10_Eq:
+	LOAD #1, R0
+	RTS
+; Code de la methode sin
+a2_sin:
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	WSTR "sin(f) not yet implemented"
+	WNL
+	WSTR "Erreur : sortie de la methode sans return"
+	WNL
+	ERROR
+a11_return:
+	POP R2
+	RTS
+; Code de la methode cos
+a3_cos:
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	WSTR "cos(f) not yet implemented"
+	WNL
+	WSTR "Erreur : sortie de la methode sans return"
+	WNL
+	ERROR
+a12_return:
+	POP R2
+	RTS
+; Code de la methode asin
+a4_asin:
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	WSTR "asin(f) not yet implemented"
+	WNL
+	WSTR "Erreur : sortie de la methode sans return"
+	WNL
+	ERROR
+a13_return:
+	POP R2
+	RTS
+; Code de la methode atan
+a5_atan:
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	WSTR "atan(f) not yet implemented"
+	WNL
+	WSTR "Erreur : sortie de la methode sans return"
+	WNL
+	ERROR
+a14_return:
+	POP R2
+	RTS
+; Code de la methode ulp
+a6_ulp:
+	TSTO #1	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	WSTR "ulp(f) not yet implemented"
+	WNL
+	WSTR "Erreur : sortie de la methode sans return"
+	WNL
+	ERROR
+a15_return:
+	POP R2
+	RTS
+; end main program

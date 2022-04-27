@@ -1,0 +1,11 @@
+// Invalid test
+// Boucle while fausse (int comme entree)
+
+{
+    int n = 2;
+    
+    while(n){
+        println("non");
+    }
+
+}

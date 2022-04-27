@@ -1,0 +1,42 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:50) - verify program: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:34) - verify listClass: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:38) - verify listClass: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:52) - Passe 1 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:54) - Passe 2 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:56) - Passe 3 Classes OK
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:28) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:34) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:58) - verify program: end
+`> [4, 0] Program
+   +> [4, 0] ListDeclClass [List with 0 elements]
+   `> [4, 0] Main
+      +> ListDeclVar [List with 2 elements]
+      |  []> [5, 7] DeclVar
+      |  ||  +> [5, 3] Identifier (int)
+      |  ||  |  definition: type (builtin), type=int
+      |  ||  +> [5, 7] Identifier (x)
+      |  ||  |  definition: variable defined at [5, 7], type=int
+      |  ||  `> [5, 7] Initialization
+      |  ||     `> [5, 11] Int (1)
+      |  ||        type: int
+      |  []> [6, 7] DeclVar
+      |      +> [6, 3] Identifier (int)
+      |      |  definition: type (builtin), type=int
+      |      +> [6, 7] Identifier (y)
+      |      |  definition: variable defined at [6, 7], type=int
+      |      `> [6, 7] Initialization
+      |         `> [6, 11] Int (2)
+      |            type: int
+      `> [8, 3] ListInst [List with 2 elements]
+         []> [8, 3] Assign
+         ||  type: int
+         ||  +> [8, 3] Identifier (x)
+         ||  |  definition: variable defined at [5, 7], type=int
+         ||  `> [8, 7] Identifier (y)
+         ||     definition: variable defined at [6, 7], type=int
+         []> [9, 3] Assign
+             type: int
+             +> [9, 3] Identifier (y)
+             |  definition: variable defined at [6, 7], type=int
+             `> [9, 7] Identifier (x)
+                definition: variable defined at [5, 7], type=int

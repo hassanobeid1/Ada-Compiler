@@ -1,0 +1,1 @@
+src/test/deca/syntax/invalid/others/testMultiStringMethode.deca:12:15: mismatched input '"hello\nworld"' expecting {'-', '(', '!', 'true', 'false', 'null', 'this', 'new', 'readFloat', 'readInt', INT, FLOAT, STRING, IDENT}

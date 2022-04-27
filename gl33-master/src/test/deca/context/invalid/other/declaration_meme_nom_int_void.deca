@@ -1,0 +1,9 @@
+// Invalid
+// Déclaration des variables de même nom (int et void)
+
+
+
+{
+   int a;
+   void a;
+}

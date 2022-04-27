@@ -1,0 +1,19 @@
+/*
+Test sur le manque des parenthèses à la fin de print dans une fonction
+
+Attention : si le fichier est modifié, il faut le vérifier à nouveau et
+copier la sortie dans src/test/deca/invalid/others/expected
+
+*/
+
+class MyClass{
+
+  int mFunc(){
+    print("Hello";
+    return 1;
+  }
+}
+
+{
+
+}

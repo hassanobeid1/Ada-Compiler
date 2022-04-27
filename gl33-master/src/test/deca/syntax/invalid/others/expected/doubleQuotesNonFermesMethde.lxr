@@ -1,0 +1,12 @@
+'class': [@0,198:202='class',<35>,9:0]
+IDENT: [@1,204:210='MyClass',<49>,9:6]
+'{': [@2,211:211='{',<13>,9:13]
+IDENT: [@3,217:219='int',<49>,10:4]
+IDENT: [@4,221:226='myFunc',<49>,10:8]
+'(': [@5,227:227='(',<11>,10:14]
+')': [@6,228:228=')',<12>,10:15]
+'{': [@7,234:234='{',<13>,11:4]
+'print': [@8,242:246='print',<23>,12:6]
+'(': [@9,247:247='(',<11>,12:11]
+INFO  fr.ensimag.deca.syntax.DecacErrorListner.syntaxError(DecacErrorListner.java:50) - no token, no LocationException => using input.getSourceName(): line=12
+src/test/deca/syntax/invalid/others/doubleQuotesNonFermesMethde.deca:12:12: token recognition error at: '"hello);\n      return 1;\n    }\n}\n\n{\n\n}\n'

@@ -1,0 +1,47 @@
+// Valid test
+// Tester la boucle while
+
+{
+    boolean a = true;
+    boolean b = false;
+    int x = 1;
+    int y = 2;
+
+    while(!a){
+        println("Inaccessible");
+    }
+
+    while(b){
+        println("Inaccessible");
+    }
+
+    while(a){
+        println("Bon");
+        a=false;
+    }
+
+    while(!a){
+        println("Bon");
+        a=true;
+    }
+
+    while(a || b){
+        println("Bon");
+        a=false;
+    }
+
+    while(a && b){
+        println("Inaccessible");
+    }
+
+    while(x > y || x ==y){
+        println("Inaccessible");
+    }
+
+    while(x < y){
+        println("Bon");
+        x=3;
+    }
+
+
+}

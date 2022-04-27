@@ -1,0 +1,10 @@
+// Invalid
+// Opérations sur les flottants et les boolean ensemble
+
+{
+    float x;
+    float y;
+    boolean a;
+
+    x = y + a;
+}

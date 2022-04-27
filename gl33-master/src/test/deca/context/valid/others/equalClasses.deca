@@ -1,0 +1,12 @@
+class Hello {}
+
+{
+    Hello a = new Hello();
+    Hello b = new Hello();
+    if (a.equals(b)) {
+        println("no");
+    }
+    if (a != b) {
+        println("yes");
+    }
+}

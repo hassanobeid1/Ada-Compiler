@@ -1,0 +1,10 @@
+// Invalid test
+// Affectation d'un string à un int
+
+{
+   String s;
+   int n;
+
+   n = s;
+   n = "non";
+}

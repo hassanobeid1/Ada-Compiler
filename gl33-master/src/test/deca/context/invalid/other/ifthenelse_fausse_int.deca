@@ -1,0 +1,10 @@
+// Invalid
+// ifthenelse fausse (int comme entree)
+
+{
+    int n = 2;
+
+    if(n){
+        println("non");
+    }
+}

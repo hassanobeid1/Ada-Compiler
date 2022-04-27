@@ -1,0 +1,65 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:50) - verify program: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:34) - verify listClass: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:38) - verify listClass: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:52) - Passe 1 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:54) - Passe 2 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:56) - Passe 3 Classes OK
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:28) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:34) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:58) - verify program: end
+`> [9, 0] Program
+   +> [3, 0] ListDeclClass [List with 1 elements]
+   |  []> [3, 0] DeclClass
+   |      +> [3, 6] Identifier (MyClass)
+   |      |  definition: type defined at [3, 6], type=MyClass
+   |      +> [3, 13] Identifier (Object)
+   |      |  definition: type (builtin), type=Object
+   |      +> ListDeclField [List with 0 elements]
+   |      `> ListDeclMethod [List with 1 elements]
+   |         []> [4, 2] DeclMethod
+   |             +> [4, 2] Identifier (boolean)
+   |             |  definition: type (builtin), type=boolean
+   |             +> [4, 10] Identifier (myFunc)
+   |             |  definition: method defined at [4, 10], type=boolean
+   |             +> [4, 17] ListParameter [List with 1 elements]
+   |             |  []> [4, 17] Parameter
+   |             |      +> [4, 17] Identifier (boolean)
+   |             |      |  definition: type (builtin), type=boolean
+   |             |      `> [4, 25] Identifier (a)
+   |             |         definition: parameter defined at [4, 25], type=boolean
+   |             `> [4, 27] BlockBody
+   |                +> ListDeclVar [List with 0 elements]
+   |                `> [5, 4] ListInst [List with 1 elements]
+   |                   []> [5, 11] Return
+   |                       `> [5, 11] Identifier (a)
+   |                          definition: parameter defined at [4, 25], type=boolean
+   `> [9, 0] Main
+      +> ListDeclVar [List with 2 elements]
+      |  []> [10, 10] DeclVar
+      |  ||  +> [10, 2] Identifier (MyClass)
+      |  ||  |  definition: type defined at [3, 6], type=MyClass
+      |  ||  +> [10, 10] Identifier (m)
+      |  ||  |  definition: variable defined at [10, 10], type=MyClass
+      |  ||  `> [10, 10] Initialization
+      |  ||     `> [10, 14] New
+      |  ||        type: MyClass
+      |  ||        `> [10, 18] Identifier (MyClass)
+      |  ||           definition: type defined at [3, 6], type=MyClass
+      |  []> [11, 10] DeclVar
+      |      +> [11, 2] Identifier (boolean)
+      |      |  definition: type (builtin), type=boolean
+      |      +> [11, 10] Identifier (b)
+      |      |  definition: variable defined at [11, 10], type=boolean
+      |      `> [11, 10] Initialization
+      |         `> [11, 14] MethodCall
+      |            type: boolean
+      |            +> [11, 14] Identifier (m)
+      |            |  definition: variable defined at [10, 10], type=MyClass
+      |            `> [11, 16] FunctionCall
+      |               type: boolean
+      |               +> [11, 16] Identifier (myFunc)
+      |               |  definition: method defined at [4, 10], type=boolean
+      |               `> [11, 23] ListExpr [List with 1 elements]
+      |                  []> [11, 23] BooleanLiteral (true)
+      |                      type: boolean
+      `> [12, 0] ListInst [List with 0 elements]

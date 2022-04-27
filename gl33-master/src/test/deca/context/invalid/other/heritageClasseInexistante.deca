@@ -1,0 +1,8 @@
+// Test de contexte invalide : héritage d'une classe inexistante
+
+class A{}
+
+class B extends C{}
+{
+    B b = new B();
+}

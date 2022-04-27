@@ -1,0 +1,10 @@
+//Test valid : utilisation des attributs public
+
+class MyClass{
+  int a = 1;
+}
+
+{
+  MyClass m = new MyClass();
+  m.a;
+}

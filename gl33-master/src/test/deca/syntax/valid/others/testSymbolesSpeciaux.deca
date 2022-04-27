@@ -1,0 +1,15 @@
+/*
+Test sur :
+- les opérateurs de comparaison logiques (unaire et binaire)
+- Les opérateurs arithmétiques (unaire et binaire)
+*/
+{
+    int a = (3 + 4) * 3 - 2;
+    boolean b = ((1 < 2) || (3 > 4)) == ((3 <= 3) && (4 >= 3));
+    boolean c = (3.4 < 4) != b;
+    int e = 120 / 12;
+    c = !b;
+    b = true && c || false;
+    a = -a;
+    e = a % 12;
+}

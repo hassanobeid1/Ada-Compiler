@@ -1,0 +1,50 @@
+/*
+Test sur la vérification de contexte des conditions de la boucle while
+*/
+
+{
+    int a = 1;
+    boolean b = true;
+    boolean c = true;
+    int d = 2;
+
+    while(a == 1) {
+        a = a + 1;
+    }
+    while(b) {
+        b = !b;
+    }
+
+    while(!b) {
+        b = !b;
+    }
+
+    while(c || b)
+    {
+        c = false;
+    }
+
+    c = true;
+    b = true;
+
+    while(b && c) {
+        b = false;
+    }
+
+    while(!b && c) {
+        b = true;
+    }
+
+    while (a == d) {
+        d = d + 1;
+    }
+    while(d > a) {
+        a = a + 2;
+    }
+    while(d < a) {
+        d = d + 1;
+    }
+    while(true && false) {
+        println("hello");
+    }
+}

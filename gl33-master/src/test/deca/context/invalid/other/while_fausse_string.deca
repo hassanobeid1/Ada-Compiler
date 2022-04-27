@@ -1,0 +1,10 @@
+// Invalid test
+// Boucle while fausse
+
+{
+    String s;
+    
+    while(s){
+        println("non");
+    }
+}

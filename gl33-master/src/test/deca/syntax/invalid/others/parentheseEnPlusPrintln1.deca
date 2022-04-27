@@ -1,0 +1,11 @@
+/*
+Test sur l'ajout de plusieurs parenthèses à la fin de println
+
+Attention : si le fichier est modifié, il faut le vérifier à nouveau et
+copier la sortie dans src/test/deca/invalid/others/expected
+
+*/
+
+{
+    println("Hello"));
+}

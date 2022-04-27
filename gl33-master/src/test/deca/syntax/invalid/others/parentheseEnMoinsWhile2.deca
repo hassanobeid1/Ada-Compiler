@@ -1,0 +1,15 @@
+/*
+Test sur le manque de plusieurs parenthèse au début de while
+
+Attention : si le fichier est modifié, il faut le vérifier à nouveau et
+copier la sortie dans src/test/deca/invalid/others/expected
+
+*/
+
+{
+  boolean a = true;
+
+  while a) {
+    print("hello");
+    }
+}

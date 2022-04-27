@@ -1,0 +1,150 @@
+; start main program
+	TSTO #2	; TSTO
+	BOV pile_pleine
+a2_Object:
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	ADDSP #2
+; Main program
+	TSTO #6	; TSTO
+	BOV pile_pleine
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD #0x0.0p0, R2
+	STORE R2, 3(LB)
+	LOAD #0x1.0p0, R2
+	STORE R2, 4(LB)
+	LOAD #0x1.0p0, R2
+	OPP R2, R2
+	STORE R2, 5(LB)
+	LOAD #0x1.6fc2ecp-1, R2
+	STORE R2, 6(LB)
+	ADDSP #6
+; Beginning of instructions:
+	BRA a4_E_Cond
+a5_E_Debut:
+	LOAD 3(LB), R2
+	LOAD 4(LB), R3
+	ADD R3, R2
+	LOAD #0x1.0p1, R3
+	DIV R3, R2
+	BOV div0
+	STORE R2, 7(LB)
+	LOAD 7(LB), R2
+	LOAD 7(LB), R3
+	LOAD 7(LB), R4
+	LOAD 7(LB), R5
+	LOAD 7(LB), R6
+	LOAD 7(LB), R7
+	LOAD 7(LB), R8
+	LOAD #0x1.0p0, R9
+	LOAD #0x1.3bp12, R10
+	DIV R10, R9
+	BOV div0
+	MUL R9, R8
+	LOAD #0x1.0p0, R9
+	LOAD #0x1.68p9, R10
+	DIV R10, R9
+	BOV div0
+	ADD R9, R8
+	MUL R8, R7
+	LOAD #0x1.0p0, R8
+	LOAD #0x1.ep6, R9
+	DIV R9, R8
+	BOV div0
+	ADD R8, R7
+	MUL R7, R6
+	LOAD #0x1.0p0, R7
+	LOAD #0x1.8p4, R8
+	DIV R8, R7
+	BOV div0
+	ADD R7, R6
+	MUL R6, R5
+	LOAD #0x1.0p0, R6
+	LOAD #0x1.8p2, R7
+	DIV R7, R6
+	BOV div0
+	ADD R6, R5
+	MUL R5, R4
+	LOAD #0x1.0p0, R5
+	LOAD #0x1.0p1, R6
+	DIV R6, R5
+	BOV div0
+	ADD R5, R4
+	MUL R4, R3
+	LOAD #0x1.0p0, R4
+	ADD R4, R3
+	MUL R3, R2
+	LOAD #1, R3
+	FLOAT R3, R3
+	SUB R3, R2
+	STORE R2, 8(LB)
+	LOAD 8(LB), R2
+	LOAD #0x0.0p0, R3
+	CMP R3, R2
+	BLE a6_debut_else
+	LOAD 7(LB), R2
+	STORE R2, 4(LB)
+	LOAD 8(LB), R2
+	STORE R2, 6(LB)
+	BRA a7_fin_else
+a6_debut_else:
+	LOAD 7(LB), R2
+	STORE R2, 3(LB)
+	LOAD 8(LB), R2
+	STORE R2, 5(LB)
+a7_fin_else:
+a4_E_Cond:
+	LOAD 4(LB), R2
+	LOAD 3(LB), R3
+	LOAD #0x1.0p-23, R4
+	ADD R4, R3
+	CMP R3, R2
+	BGE a5_E_Debut
+	LOAD 3(LB), R2
+	LOAD R2, R1
+	WFLOAT
+	WSTR " = "
+	LOAD 3(LB), R2
+	LOAD R2, R1
+	WFLOATX
+	WNL
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a8_Eq
+	LOAD #0, R0
+	RTS
+a8_Eq:
+	LOAD #1, R0
+	RTS
+; end main program

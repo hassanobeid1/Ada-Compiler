@@ -1,0 +1,22 @@
+// Invalid
+// ifthenelse fausse
+
+{
+    int n = 2;
+    float x= 2.5;
+    string s = "true";
+
+    if(n){
+        println("non");
+    }
+
+    if(x){
+        println("non");
+    }
+
+    if(s){
+        println("non");
+    }
+
+    
+}

@@ -1,0 +1,10 @@
+// Invalid test
+// Affectation d'un flottant à un int
+
+{
+   int n;
+   float x;
+
+   n = x;
+   n = 1.3;
+}

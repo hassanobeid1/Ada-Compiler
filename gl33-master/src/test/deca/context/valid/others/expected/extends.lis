@@ -1,0 +1,82 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:50) - verify program: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:34) - verify listClass: start
+DEBUG fr.ensimag.deca.tree.ListDeclClass.verifyListClass(ListDeclClass.java:38) - verify listClass: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:52) - Passe 1 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:54) - Passe 2 OK
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:56) - Passe 3 Classes OK
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:28) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:34) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:58) - verify program: end
+`> [18, 0] Program
+   +> [1, 0] ListDeclClass [List with 2 elements]
+   |  []> [1, 0] DeclClass
+   |  ||  +> [1, 6] Identifier (Hello)
+   |  ||  |  definition: type defined at [1, 6], type=Hello
+   |  ||  +> [1, 12] Identifier (Object)
+   |  ||  |  definition: type (builtin), type=Object
+   |  ||  +> ListDeclField [List with 2 elements]
+   |  ||  |  []> [3, 8] DeclField
+   |  ||  |  ||  +> [3, 4] Identifier (int)
+   |  ||  |  ||  |  definition: type (builtin), type=int
+   |  ||  |  ||  +> [3, 8] Identifier (a)
+   |  ||  |  ||  |  definition: field defined at [3, 8], type=int
+   |  ||  |  ||  `> [3, 12] Initialization
+   |  ||  |  ||     `> [3, 12] Int (2)
+   |  ||  |  ||        type: int
+   |  ||  |  []> [4, 22] DeclField
+   |  ||  |      +> [4, 14] Identifier (boolean)
+   |  ||  |      |  definition: type (builtin), type=boolean
+   |  ||  |      +> [4, 22] Identifier (b)
+   |  ||  |      |  definition: field defined at [4, 22], type=boolean
+   |  ||  |      `> [4, 22] NoInitialization
+   |  ||  `> ListDeclMethod [List with 1 elements]
+   |  ||     []> [6, 4] DeclMethod
+   |  ||         +> [6, 4] Identifier (void)
+   |  ||         |  definition: type (builtin), type=void
+   |  ||         +> [6, 9] Identifier (bonjour)
+   |  ||         |  definition: method defined at [6, 9], type=void
+   |  ||         +> [6, 17] ListParameter [List with 1 elements]
+   |  ||         |  []> [6, 17] Parameter
+   |  ||         |      +> [6, 17] Identifier (boolean)
+   |  ||         |      |  definition: type (builtin), type=boolean
+   |  ||         |      `> [6, 25] Identifier (a)
+   |  ||         |         definition: parameter defined at [6, 25], type=boolean
+   |  ||         `> [6, 28] BlockBody
+   |  ||            +> ListDeclVar [List with 0 elements]
+   |  ||            `> [7, 8] ListInst [List with 1 elements]
+   |  ||               []> [7, 16] Println
+   |  ||                   `> [7, 16] ListExpr [List with 1 elements]
+   |  ||                      []> [7, 16] StringLiteral (hello)
+   |  ||                          type: String
+   |  []> [11, 0] DeclClass
+   |      +> [11, 6] Identifier (World)
+   |      |  definition: type defined at [11, 6], type=World
+   |      +> [11, 20] Identifier (Hello)
+   |      |  definition: type defined at [1, 6], type=Hello
+   |      +> ListDeclField [List with 0 elements]
+   |      `> ListDeclMethod [List with 1 elements]
+   |         []> [13, 4] DeclMethod
+   |             +> [13, 4] Identifier (void)
+   |             |  definition: type (builtin), type=void
+   |             +> [13, 9] Identifier (bonjour)
+   |             |  definition: method defined at [13, 9], type=void
+   |             +> [13, 17] ListParameter [List with 1 elements]
+   |             |  []> [13, 17] Parameter
+   |             |      +> [13, 17] Identifier (boolean)
+   |             |      |  definition: type (builtin), type=boolean
+   |             |      `> [13, 25] Identifier (a)
+   |             |         definition: parameter defined at [13, 25], type=boolean
+   |             `> [13, 28] BlockBody
+   |                +> ListDeclVar [List with 0 elements]
+   |                `> [14, 8] ListInst [List with 1 elements]
+   |                   []> [14, 16] Println
+   |                       `> [14, 16] ListExpr [List with 1 elements]
+   |                          []> [14, 16] StringLiteral (hello world)
+   |                              type: String
+   `> [18, 0] Main
+      +> ListDeclVar [List with 0 elements]
+      `> [19, 4] ListInst [List with 1 elements]
+         []> [19, 12] Println
+             `> [19, 12] ListExpr [List with 1 elements]
+                []> [19, 12] StringLiteral (ok)
+                    type: String

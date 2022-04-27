@@ -1,0 +1,1 @@
+src/test/deca/syntax/invalid/others/bracketEnPlusProgram2.deca:10:2: mismatched input '{' expecting {'-', '(', '}', '!', ';', 'print', 'println', 'printx', 'printlnx', 'while', 'return', 'if', 'true', 'false', 'null', 'this', 'new', 'readFloat', 'readInt', INT, FLOAT, STRING, IDENT}

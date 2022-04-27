@@ -1,0 +1,23 @@
+/*
+Test sur le syntaxe de instanceof
+
+Attention : si le fichier est modifié, il faut le vérifier à nouveau et
+copier la sortie dans src/test/deca/invalid/others/expected
+
+*/
+
+class A{
+   boolean a = true;
+}
+
+class B extends A{}
+
+{
+  A a = new A();
+  B b = new B();
+
+  if(a instamceof b)
+    {
+      print("Ok");
+    }
+}

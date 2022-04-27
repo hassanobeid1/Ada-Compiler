@@ -1,0 +1,19 @@
+class A {
+    int getA() {
+        return 2;
+    }
+}
+class B extends A {}
+class C {}
+
+{
+    A a = new A();
+    B b1 = new B();
+    C c = new C();
+    A b2 = (A) (b1);
+    B b3;
+    println(b2.getA());
+    b3 = (B) (b2);
+    println(b2.getA());
+    (A) (c);
+}

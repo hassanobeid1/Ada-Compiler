@@ -1,0 +1,18 @@
+// Test de contexte invalide : valeur de retour fausse (boolean au lieu de float)
+
+class MyClass{
+
+    float isPos(float a){
+      if(a > 0){
+        return true;
+        }
+      else{
+        return false;
+        }
+    }
+}
+
+{
+    MyClass m = new MyClass();
+    float x = m.isPos(4.1);
+}

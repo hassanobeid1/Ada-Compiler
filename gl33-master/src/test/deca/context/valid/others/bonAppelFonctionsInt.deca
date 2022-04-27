@@ -1,0 +1,12 @@
+//Test valid : appel des fonctions par les bons paramètres d'entrée (int) et par les bons valeurs de retour
+
+class MyClass{
+  int myFunc(int a){
+    return a+1;
+  }
+}
+
+{
+  MyClass m = new MyClass();
+  int b = m.myFunc(1);
+}

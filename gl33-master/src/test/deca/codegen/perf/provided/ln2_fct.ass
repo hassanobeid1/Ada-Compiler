@@ -1,0 +1,229 @@
+; start main program
+	TSTO #5	; TSTO
+	BOV pile_pleine
+a3_Object:
+	LOAD #0, R0
+	STORE R0, 1(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD a1_Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD a2_pexp, R0
+	STORE R0, 5(GB)
+	ADDSP #5
+; Main program
+	TSTO #11	; TSTO
+	BOV pile_pleine
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	NEW #1, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR a4_Polyexp.init
+	POP R2
+	STORE R2, 6(LB)
+	LOAD #0x0.0p0, R2
+	STORE R2, 7(LB)
+	LOAD #0x1.0p0, R2
+	STORE R2, 8(LB)
+	LOAD #0x1.0p0, R2
+	OPP R2, R2
+	STORE R2, 9(LB)
+	LOAD #0x1.6fc2ecp-1, R2
+	STORE R2, 10(LB)
+	ADDSP #7
+; Beginning of instructions:
+	BRA a6_E_Cond
+a7_E_Debut:
+	ADDSP #2
+	LOAD 6(LB), R2
+	STORE R2, 0(SP)
+	LOAD 7(LB), R2
+	LOAD 8(LB), R3
+	ADD R3, R2
+	LOAD #0x1.0p1, R3
+	DIV R3, R2
+	BOV div0
+	STORE R2, 11(LB)
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	BEQ dereferencement.null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #2
+	LOAD R0, R2
+	STORE R2, 12(LB)
+	LOAD #0x0.0p0, R3
+	CMP R3, R2
+	BLE a8_debut_else
+	LOAD 11(LB), R2
+	STORE R2, 8(LB)
+	LOAD 12(LB), R2
+	STORE R2, 10(LB)
+	BRA a9_fin_else
+a8_debut_else:
+	LOAD 11(LB), R2
+	STORE R2, 7(LB)
+	LOAD 12(LB), R2
+	STORE R2, 9(LB)
+a9_fin_else:
+a6_E_Cond:
+	LOAD 8(LB), R2
+	LOAD 7(LB), R3
+	LOAD #0x1.0p-23, R4
+	ADD R4, R3
+	CMP R3, R2
+	BGE a7_E_Debut
+	LOAD 7(LB), R2
+	LOAD R2, R1
+	WFLOAT
+	WSTR " = "
+	LOAD 7(LB), R2
+	LOAD R2, R1
+	WFLOATX
+	WNL
+	HALT
+pile_pleine:
+	WSTR "Stack overflow"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+div0:
+	WSTR "Erreur : division par 0"
+	WNL
+	ERROR
+a0_Object.init:
+	RTS
+a4_Polyexp.init:
+	TSTO #3	; TSTO
+	BOV pile_pleine
+	LOAD -2(LB), R1
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+	LOAD #0, R0
+	PUSH R1
+	BSR a0_Object.init
+	SUBSP #1
+	RTS
+a1_Object.equals:
+	LOAD -3(SP), R1
+	CMP -2(SP), R1
+	BEQ a10_Eq
+	LOAD #0, R0
+	RTS
+a10_Eq:
+	LOAD #1, R0
+	RTS
+; Code de la methode pexp
+a2_pexp:
+	TSTO #9	; TSTO
+	BOV pile_pleine
+	PUSH R2	; Push Registre Placeholder
+	PUSH R3	; Push Registre Placeholder
+	PUSH R4	; Push Registre Placeholder
+	PUSH R5	; Push Registre Placeholder
+	PUSH R6	; Push Registre Placeholder
+	PUSH R7	; Push Registre Placeholder
+	PUSH R8	; Push Registre Placeholder
+	PUSH R9	; Push Registre Placeholder
+	PUSH R10	; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Push Registre Placeholder
+; Beginning of instructions:
+	LOAD -3(LB), R0
+	LOAD -3(LB), R3
+	LOAD -3(LB), R4
+	LOAD -3(LB), R5
+	LOAD -3(LB), R6
+	LOAD -3(LB), R7
+	LOAD -3(LB), R8
+	LOAD #0x1.0p0, R9
+	LOAD #0x1.3bp12, R10
+	DIV R10, R9
+	BOV div0
+	MUL R9, R8
+	LOAD #0x1.0p0, R9
+	LOAD #0x1.68p9, R10
+	DIV R10, R9
+	BOV div0
+	ADD R9, R8
+	MUL R8, R7
+	LOAD #0x1.0p0, R8
+	LOAD #0x1.ep6, R9
+	DIV R9, R8
+	BOV div0
+	ADD R8, R7
+	MUL R7, R6
+	LOAD #0x1.0p0, R7
+	LOAD #0x1.8p4, R8
+	DIV R8, R7
+	BOV div0
+	ADD R7, R6
+	MUL R6, R5
+	LOAD #0x1.0p0, R6
+	LOAD #0x1.8p2, R7
+	DIV R7, R6
+	BOV div0
+	ADD R6, R5
+	MUL R5, R4
+	LOAD #0x1.0p0, R5
+	LOAD #0x1.0p1, R6
+	DIV R6, R5
+	BOV div0
+	ADD R5, R4
+	MUL R4, R3
+	LOAD #0x1.0p0, R4
+	ADD R4, R3
+	MUL R3, R0
+	LOAD #1, R3
+	FLOAT R3, R3
+	SUB R3, R0
+	BRA a11_return
+	WSTR "Erreur : sortie de la methode sans return"
+	WNL
+	ERROR
+a11_return:
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+; end main program

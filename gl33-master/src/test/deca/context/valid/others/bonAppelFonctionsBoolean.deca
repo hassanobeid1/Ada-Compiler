@@ -1,0 +1,12 @@
+//Test valid : appel des fonctions par les bons paramètres d'entrée (boolean) et par les bons valeurs de retour
+
+class MyClass{
+  boolean myFunc(boolean a){
+    return a;
+  }
+}
+
+{
+  MyClass m = new MyClass();
+  boolean b = m.myFunc(true);
+}
